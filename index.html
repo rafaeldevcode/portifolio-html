@@ -8,7 +8,7 @@
 
     <meta name="description" content="Desenvolvedor Web | Rafael Vieira">
     <meta name="author" content="Rafael Vieira">
-    <!-- <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon"> -->
+    <link rel="shortcut icon" href="./images/logo.png" type="image/png">
     <title>Rafael Vieira</title>
 </head>
 <body>
@@ -20,17 +20,19 @@
 
         <nav class="nav">
             <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Conhecimentos</a></li>
-                <li><a href="#">Futuramente</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><img src="./images/inicio.png" alt="Inicio"><a href="#inicio">Início</a></li>
+                <li><img src="./images/conhecimentos.png" alt="Conhecimentos"><a href="#cohecimentos">Conhecimentos</a></li>
+                <li><img src="./images/projetos.png" alt="Projetos"><a href="#projetos">Projetos</a></li>
+                <li><img src="./images/futuramente.png" alt="Futuramente"><a href="#futuramente">Futuramente</a></li>
+                <li><img src="./images/sobre.png" alt="Sobre"><a href="#sobre">Sobre</a></li>
+                <li><img src="./images/certificados.png" alt="Certificados"><a href="#certificado">Certificados</a></li>
+                <li><img src="./images/contato.png" alt=""><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="conteudo">
-        <section class="principal">
+        <section id="inicio" class="principal">
             <div class="titulos">
                 <h1>Rafael Vieira</h1>
                 <h2>Dedenvolvedor Web</h2>
@@ -46,76 +48,209 @@
             </div>
         </section>
 
-        <section class="conhecimentos">
+        <section id="conhecimento" class="conhecimentos">
             <div class="titulo">
-                <h4>Conhecimentos</h4>
+                <h3>Conhecimentos</h3>
             </div>
 
-            <div class="card">
-                <h3>Html</h3>
-                <div class="progresso">
-                    <div class="barra"></div>
-                    <span>90%</span>
+            <h4 class="descricao">Algumas linguagens e ferramentas que possuo conhecimento.</h4>
+
+            <div class="colecao-card">
+                <div class="card">
+                    <h5>Html</h5>
+                    <div class="progresso">
+                        <div class="barra"><div class="barra-progresso html"></div></div>
+                        <span>80%</span>
+                    </div>
                 </div>
-            </div>
-
-            <div class="card">
-                <h3>CSS</h3>
-                <div class="progresso">
-                    <div class="barra"></div>
-                    <span>90%</span>
+    
+                <div class="card">
+                    <h5>CSS</h5>
+                    <div class="progresso">
+                        <div class="barra"><div class="barra-progresso css"></div></div>
+                        <span>60%</span>
+                    </div>
                 </div>
-            </div>
-
-            <div class="card">
-                <h3>Java Script</h3>
-                <div class="progresso">
-                    <div class="barra"></div>
-                    <span>90%</span>
+    
+                <div class="card">
+                    <h5>Java Script</h5>
+                    <div class="progresso">
+                        <div class="barra"><div class="barra-progresso js"></div></div>
+                        <span>20%</span>
+                    </div>
                 </div>
-            </div>
+    
+                <div class="card">
+                    <h5>Node</h5>
+                    <div class="progresso">
+                        <div class="barra"><div class="barra-progresso node"></div></div>
+                        <span>10%</span>
+                    </div>
+                </div>
 
-            <div class="card">
-                <h3>Node</h3>
-                <div class="progresso">
-                    <div class="barra"></div>
-                    <span>90%</span>
+                <div class="card">
+                    <h5>Wordpress</h5>
+                    <div class="progresso">
+                        <div class="barra"><div class="barra-progresso wordpress"></div></div>
+                        <span>20%</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h5>Git</h5>
+                    <div class="progresso">
+                        <div class="barra"><div class="barra-progresso git"></div></div>
+                        <span>40%</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="futuramente">
+        <section id="projetos" class="projetos">
             <div class="titulo">
-                <h4>Futuramente</h4>
+                <h3>Projetos</h3>
             </div>
 
-            <div class="card">
-                <img src="" alt="">
-            </div>
+            <h4 class="descricao">Aqui estão alguns projetos que desenvolvi em aulas ou para aprimorar conhecimentos.</h4>
 
-            <div class="card">
-                <img src="" alt="">
-            </div>
+            <div class="colecao-card">
+                <div class="card">
+                    <img src="./images/app-1.jpg" alt="Aplicação 1">
+                    <p>Projeto 1</p>
 
-            <div class="card">
-                <img src="" alt="">
-            </div>
+                    <a href="#">Ver projeto <img src="./images/github.png" alt="GitHub"></a>
+                </div>
 
-            <div class="card">
-                <img src="" alt="">
+                <div class="card">
+                    <img src="./images/app-1.jpg" alt="Aplicação 2">
+                    <p>Projeto 2</p>
+
+                    <a href="#">Ver projeto <img src="./images/github.png" alt="GitHub"></a>
+                </div>
+
+                <div class="card">
+                    <img src="./images/app-1.jpg" alt="Aplicação 3">
+                    <p>Projeto 3</p>
+
+                    <a href="#">Ver projeto <img src="./images/github.png" alt="GitHub"></a>
+                </div>
+
+                <div class="card">
+                    <img src="./images/app-1.jpg" alt="Aplicação 4">
+                    <p>Projeto 4</p>
+
+                    <a href="#">Ver projeto <img src="./images/github.png" alt="GitHub"></a>
+                </div>
             </div>
         </section>
 
-        <section class="sobre">
+        <section id="futuramente"  class="futuramente">
             <div class="titulo">
-                <h4>Sobre</h4>
+                <h3>Futuramente</h3>
             </div>
 
+            <h4 class="descricao">Futuramente pretendo esrudar outras linguagens e ferramentas.</h4>
+
+            <div class="colecao-card">
+                <div class="card">
+                    <p>Php</p>
+                    <img src="./images/php.png" alt="PHP">
+                    <span>Em andamento</span>
+                </div>
+    
+                <div class="card">
+                    <p>UX & UI design</p>
+                    <img src="./images/next.png" alt="UX & UI">
+                    <span>Futuramente</span>
+                </div>
+    
+                <div class="card">
+                    <p>MySql</p>
+                    <img src="./images/sql.png" alt="MySql">
+                    <span>Futuramente</span>
+                </div>
+    
+                <div class="card">
+                    <p>React</p>
+                    <img src="./images/react.png" alt="React">
+                    <span>Futuramente</span>
+                </div>
+            </div>
         </section>
 
-        <section class="contato">
+        <section id="sobre" class="sobre">
             <div class="titulo">
-                <h4>Contato</h4>
+                <h3>Sobre</h3>
+            </div>
+
+            <h4 class="descricao">Um pouca da minha história no mundo de TI.</h4>
+
+            <div class="historia">
+                <div class="image">
+                    <img src="./images/rafae-vieira.jpg" alt="Rafael Vieira">
+                </div>
+                <p>Primeiro volume da saga Percy Jackson e os olimpianos, O ladrão de raios esteve entre os primeiros lugares na lista das séries mais vendidas do The New York Times . O autor conjuga lendas da mitologia grega com aventuras no século XXI. Nelas, os deuses do Olimpo continuam vivos, ainda se apaixonam por mortais e geram filhos metade deuses, metade humanos, como os heróis da Grécia antiga. Marcados pelo destino, eles dificilmente passam da adolescência. Poucos conseguem descobrir sua identidade.</p>
+                
+                <p>Primeiro volume da saga Percy Jackson e os olimpianos, O ladrão de raios esteve entre os primeiros lugares na lista das séries mais vendidas do The New York Times . O autor conjuga lendas da mitologia grega com aventuras no século XXI. Nelas, os deuses do Olimpo continuam vivos, ainda se apaixonam por mortais e geram filhos metade deuses, metade humanos, como os heróis da Grécia antiga. Marcados pelo destino, eles dificilmente passam da adolescência. Poucos conseguem descobrir sua identidade.</p>
+            
+                <p>Primeiro volume da saga Percy Jackson e os olimpianos, O ladrão de raios esteve entre os primeiros lugares na lista das séries mais vendidas do The New York Times . O autor conjuga lendas da mitologia grega com aventuras no século XXI. Nelas, os deuses do Olimpo continuam vivos, ainda se apaixonam por mortais e geram filhos metade deuses, metade humanos, como os heróis da Grécia antiga. Marcados pelo destino, eles dificilmente passam da adolescência. Poucos conseguem descobrir sua identidade.</p>
+            </div>
+        </section>
+
+        <section id="certificado" class="certificados">
+            <div class="titulo">
+                <h3>Certificados</h3>
+            </div>
+
+            <h4 class="descricao"> Imagens dos meus certificados de diversos cursos que realizei.</h4>
+
+            <div class="carrossel">
+                <div class="item-carrossel">
+                    <img src="./images/https.jpg" alt="Curo de HTTPS">
+                    <p>Curso de HTTPS realizado na Alura</p>
+                </div>
+
+                <div class="btns">
+                    <button class="anterior"><img src="./images/anterior.png" alt="Anterior"></button>
+                    <button class="proximo"><img src="./images/proximo.png" alt="Próximo"></button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="contato">
+            <div class="titulo">
+                <h3>Contato</h3>
+            </div>
+
+            <h4 class="descricao">Tem alguma sugestão ou deseja contratar serviços?</h4>
+            <p>Deixe seus dados abixo que entrarei em contato, ou se preferir por outro meio, tem tabém as redes sociais.</p>
+
+            <div class="form">
+                <div class="image">
+                    <img src="./images/form.png" alt="Cotato">
+                </div>
+                <form action="?">
+
+                    <div class="inputs">
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" id="nome" placeholder="Digite seu nome">
+                    </div>
+    
+                    <div class="inputs">
+                        <label for="email">E-mail</label>
+                        <input type="text" name="email" id="email" placeholder="Digite seu e-mail">
+                    </div>
+    
+                    <div class="inputs">
+                        <label for="email">Telefone</label>
+                        <input type="number" name="telefone" id="telefone" placeholder="Digite seu telefone">
+                    </div>
+    
+                    <div class="inputs">
+                        <input type="submit" placeholder="Enviar">
+                    </div>
+    
+                </form>
             </div>
 
         </section>
