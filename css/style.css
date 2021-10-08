@@ -2,10 +2,18 @@
     font-family: Netron;
     src: url(../fonts/Netron.ttf);
 }
-
-body{
-    background: linear-gradient(270deg, #1d0744, #090118);
+html{
+    background: #F90446;
 }
+body{
+    /* background: linear-gradient(270deg, #1d0744, #090118); */
+    background: rgb(29, 29, 29);
+    border: 2px solid #F90446;
+}
+
+/* :root {
+    --cor-principal: #F90446;
+  } */
 
 *{
     font-family: Netron;
@@ -22,6 +30,7 @@ body{
     color: #F90446;
     margin-bottom: 30px;
     font-size: 1.1em;
+    padding: 10px;
 }
 
 .cabecalho{
@@ -37,11 +46,34 @@ body{
 }
 
 .cabecalho .logo{
-    width: 5%;
+    width: 28%;
     margin: auto;
 }
 
 .cabecalho .logo img{
+    width: 100%;
+}
+
+.cabecalho .menu-mobile{
+    cursor: pointer;
+    display: none;
+    width: 30px;
+    margin: 10px;
+}
+
+.cabecalho .menu-mobile img{
+    width: 100%;
+}
+
+.cabecalho .nav .fechar-menu{
+    display: none;
+    cursor: pointer;
+    width: 25px;
+    margin: 10px 10px 20px;
+    float: right;
+}
+
+.cabecalho .nav .fechar-menu img{
     width: 100%;
 }
 
@@ -54,13 +86,16 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: border-bottom .3s;
+}
+
+.cabecalho .nav ul li:hover{
+    border-bottom: 1px solid #F90446;
 }
 
 .cabecalho .nav ul li img{
-    background: #F90446;
     padding: 3px;
     margin: 0 3px 0 5px;
-    border-radius: 25px;
     width: 28px;
     height: 28px;
 }
@@ -82,6 +117,8 @@ body{
     margin: auto;
 }
 
+
+/* //////////////// PRINCIPAL /////////////// */
 .conteudo .principal{
     width: 100%;
     height: 600px;
@@ -89,6 +126,9 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* background: url(../img/bg2-principal.png) no-repeat;
+    background-position: right;
+    background-size: contain; */
 }
 
 .conteudo .principal .titulos{
@@ -97,20 +137,23 @@ body{
 
 .conteudo .principal .titulos h1{
     font-size: 4em;
+    text-align: center;
 }
 
 .conteudo .principal .titulos h2{
     font-size: 2.6em;
+    text-align: center;
 }
 
-.conteudo .principal .social ul{
+.social ul{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.conteudo .principal .social ul li{
+.social ul li{
+    cursor: pointer;
     width: 45px;
     height: 45px;
     /* background-color: #ff0062; */
@@ -118,9 +161,14 @@ body{
     padding: 10px;
     margin: 5px;
     border-radius: 50px;
+    transition: border .3s;
 }
 
-.conteudo .principal .social ul li img{
+.social ul li:hover{
+    border: 2px solid #FFF;
+}
+
+.social ul li img{
     width: 100%;
 }
 
@@ -134,6 +182,7 @@ body{
 .titulo h3{
     font-size: 2em;
     color:#F90446;
+    padding-left: 10px;
     /* border-bottom: 2px solid #F90446; */
 }
 
@@ -150,12 +199,18 @@ body{
 }
 
 .conhecimentos .colecao-card .card{
+    cursor: pointer;
     width: 46%;
     border: 1px solid #F90446;
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
     box-shadow: 0px 0px 10px #F90446;
+    transition: transform .4s;
+}
+
+.conhecimentos .colecao-card .card:hover{
+    transform: scale(1.02);
 }
 
 .conhecimentos .colecao-card .card h5{
@@ -178,37 +233,35 @@ body{
 }
 
 .conhecimentos .colecao-card .card .progresso .barra .barra-progresso{
+    width: 0;
     height: 100%;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
     background: #F90446;
 }
 
-.conhecimentos .colecao-card .card .progresso .barra .html{
-    width: 80%;
-}
 
-.conhecimentos .colecao-card .card .progresso .barra .css{
-    width: 60%;
-}
-
-.conhecimentos .colecao-card .card .progresso .barra .js{
-    width: 20%;
-}
-
-.conhecimentos .colecao-card .card .progresso .barra .node{
-    width: 10%;
-}
-
-.conhecimentos .colecao-card .card .progresso .barra .wordpress{
-    width: 20%;
-}
-
-.conhecimentos .colecao-card .card .progresso .barra .git{
-    width: 40%;
-}
 
 .conhecimentos .colecao-card .card .progresso span{
+    color: #F90446;
+    font-size: 1em;
+    width: 100%;
+    text-align: right;
+}
+
+.conhecimentos .colecao-card .card .progresso span::before{
+    content: "";
+    background: url(../images/baixo.png) center;
+    background-size: contain;
+    float: left;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+.conhecimentos .colecao-card .card .aprendizado{
+    display: none;
+}
+
+.conhecimentos .colecao-card .card .aprendizado ul li{
     color: #F90446;
     font-size: 1em;
 }
@@ -251,6 +304,12 @@ body{
     align-items: center;
     border-radius: 5px;
     color: #000;
+    transition: transform .4s, box-shadow .4s;
+}
+
+.projetos .colecao-card .card a:hover{
+    transform: scale(1.02);
+    box-shadow: 0px 0px 2px #F90446;
 }
 
 .projetos .colecao-card .card a img{
@@ -341,7 +400,8 @@ body{
     max-width: 900px;
     margin: auto;
     /* height: 600px; */
-    padding: 10px;
+    /* padding: 10px; */
+    /* z-index: -1; */
 }
 
 .certificados .carrossel .item-carrossel{
@@ -357,12 +417,13 @@ body{
     margin-bottom: 20px;
 }
 
-.certificados .carrossel .item-carrossel p{
+/* .certificados .carrossel .item-carrossel p{
     background: #F90446;
     padding: 10px;
     border-radius: 5px;
     display: inline;
-}
+    font-size: 1em;
+} */
 
 .certificados .carrossel .btns{
     width: 100%;
@@ -381,6 +442,11 @@ body{
     justify-content: center;
     align-items: center;
     padding: 5px;
+    transition: background .3s;
+}
+
+.certificados .carrossel .btns button:hover{
+    background: #FFF;
 }
 
 .certificados .carrossel .btns button img{
@@ -395,7 +461,8 @@ body{
 
 .contato p{
     color: #F90446;
-    font-size: 1;
+    font-size: 1em;
+    padding-left: 10px;
 }
 
 .contato .form{
@@ -440,10 +507,13 @@ body{
     padding: 15px 5px;
     border-radius: 5px;
     background: #000;
+    transition: border .5s;
+    border: 1px solid #000;
 }
 
 .contato .form form .inputs input:focus{
     outline: none;
+    border: 1px solid #F90446;
 }
 
 .contato .form form .inputs input[type="submit"]{
@@ -456,4 +526,210 @@ body{
 
 .contato .form form .inputs input[type="submit"]:hover{
     background: #FFF;
+}
+
+/* /////////////// VOLTAR AO TOPO ////////////// */
+.conteudo .btn-topo{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    background: #000;
+    box-shadow: 0px 0px 10px #F90446;
+    border: 1px solid #F90446;
+    transition: transform .4s;
+}
+
+.conteudo .btn-topo:hover{
+    transform: scale(1.1);
+}
+
+.conteudo .btn-topo a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.conteudo .btn-topo a img{
+    width: 100%;
+    height: 100%;
+}
+
+/* //////////////// RODAPÉ /////////////// */
+.rodape{
+    width: 100%;
+    background: #000;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rodape .copy{
+    color: #F90446;
+}
+
+/* /////////////// KEYFRAMES //////////////// */
+.html{
+    animation: html .5s linear forwards;
+}
+
+.css{
+    animation: css .5s linear forwards;
+}
+
+.js{
+    animation: js .5s linear forwards;
+}
+
+.node{
+    animation: node .5s linear forwards;
+}
+
+.wordpress{
+    animation: wordpress .5s linear forwards;
+}
+
+.git{
+    animation: git .5s linear forwards;
+}
+
+.abrir-menu{
+    animation: abrir-menu .3s ease-out forwards;
+}
+
+@keyframes abrir-menu {
+    to{
+        right: 0;
+    }
+}
+
+@keyframes html {
+    to{
+        width: 80%;
+    }
+}
+
+@keyframes css {
+    to{
+        width: 60%;
+    }
+}
+
+@keyframes js {
+    to{
+        width: 20%;
+    }
+}
+
+@keyframes node {
+    to{
+        width: 10%;
+    }
+}
+
+@keyframes wordpress {
+    to{
+        width: 20%;
+    }
+}
+
+@keyframes git {
+    to{
+        width: 40%;
+    }
+}
+
+/* ////////////// MEDIA SCREEN ////////////// */
+@media only screen and (max-width: 1050px){
+    .cabecalho{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .cabecalho .logo{
+        margin-left: 10px;
+    }
+    .cabecalho .menu-mobile{
+        display: block;
+    }
+
+    .cabecalho .nav{
+        position: fixed;
+        width: auto;
+        height: 100%;
+        padding-left: 30px;
+        top: 0;
+        right: -280px;
+        background: #000;
+    }
+    .cabecalho .nav .fechar-menu{
+        display: block;
+    }
+    .cabecalho .nav ul{
+        width: 100%;
+        flex-direction: column;
+    }
+    .cabecalho .nav ul li {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+}
+
+@media only screen and (max-width: 650px){
+    .descricao{
+        text-align: center;
+    }
+    .conhecimentos .colecao-card .card{
+        width: 80%;
+    }
+    .projetos .colecao-card .card {
+        width: 80%;
+    }
+    .futuramente .colecao-card .card {
+        width: 80%;
+    }
+    .contato p{
+        padding: 0 10px 10px;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 585px){
+    .conteudo .principal .titulos h1 {
+        font-size: 3em;
+    }
+    .conteudo .principal .titulos h2 {
+        font-size: 2em;
+    }
+    .titulo h3{
+        font-size: 1.7em;
+    }
+    .conteudo .btn-topo{
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media only screen and (max-width: 445px){
+    .conteudo .principal .titulos h1 {
+        font-size: 2.5em;
+    }
+    .conteudo .principal .titulos h2 {
+        font-size: 1.6em;
+    }
+    .cabecalho .logo{
+        width: 40%;
+    }
+    .conteudo .btn-topo{
+        bottom: 5px;
+        right: 5px;
+    }
+    /* .certificados .carrossel .item-carrossel p{
+        font-size: .8em;
+    } */
 }

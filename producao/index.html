@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Rafael Vieira">
+    <link rel="shortcut icon" href="./favicon.png" type="image/png">
+    <title>Rafael Vieira | Site em Produção</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        html, body{
+            width: 100%;
+            height: 100%;
+        }
+
+        .conteudo{
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .conteudo .titulo{
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .conteudo .titulo h1{
+            font-size: 1.5em;
+            color: #F90446;
+            text-align: center;
+        }
+
+        .conteudo .image{
+            width: 100%;
+            max-width: 150px;
+            padding: 20px;
+        }
+
+        .conteudo .image img{
+            width: 100%;
+        }
+
+        .config{
+            animation: config 5s linear infinite;
+        }
+
+        @keyframes config {
+            to{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="conteudo">
+        <div class="titulo">
+            <h1>
+                rafael.com ainda está em produção <br>
+                Logo estará online.
+            </h1>
+        </div>
+        <div class="image">
+            <img class="config" src="./images/config.png" alt="Produção">
+        </div>
+    </main>
+</body>
+</html>
