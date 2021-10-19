@@ -138,11 +138,11 @@ body{
     justify-content: center;
     align-items: flex-start;
     background: url(../images/principal-bg.svg) right no-repeat;
-    background-position: right;
     background-size: contain;
 }
 
 .conteudo .principal .titulos{
+    background: rgb(20, 20, 20);
     color:#F90446;
 }
 
@@ -156,14 +156,15 @@ body{
     text-align: center;
 }
 
-.social ul{
+.conteudo .principal .titulos ul{
+    background: rgb(20, 20, 20);
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.social ul li{
+.conteudo .principal .titulos ul li{
     cursor: pointer;
     width: 45px;
     height: 45px;
@@ -175,17 +176,18 @@ body{
     transition: border .3s;
 }
 
-.social ul li:hover{
+.conteudo .principal .titulos ul li:hover{
     border: 2px solid #FFF;
 }
 
-.social ul li img{
+.conteudo .principal .titulos ul li img{
     width: 100%;
 }
 
 .titulo{
     /* padding: 20px 5px; */
     /* background: #000; */
+    background: rgb(20, 20, 20);
     border-bottom: 2px solid #F90446;
     margin-bottom: 100px;
 }
@@ -204,6 +206,7 @@ body{
 
 .conhecimentos{
     background: url(../images/conhecimentos-bg.svg) center no-repeat;
+    background-size: contain;
 }
 
 .conhecimentos .colecao-card{
@@ -285,6 +288,7 @@ body{
 /* /////////////// PROJETOS ////////////// */
 .projetos{
     background: url(../images/projetos-bg.svg) center right no-repeat;
+    background-size: contain;
 }
 
 .projetos .colecao-card{
@@ -350,7 +354,8 @@ body{
 
 /* /////////////// FUTURAMENTE /////////////// */
 .futuramente{
-    background: url(../images/futuramente-bg.svg) center bottom no-repeat;
+    background: url(../images/futuramente-bg.svg) center no-repeat;
+    background-size: contain;
 }
 
 .futuramente .colecao-card{
@@ -397,7 +402,8 @@ body{
 
 /* ///////////////// SOBRE //////////////// */
 .sobre{
-    background: url(../images/sobre-bg.svg) bottom right no-repeat;
+    background: url(../images/sobre-bg.svg) center no-repeat;
+    background-size: contain;
 }
 
 .sobre .historia{
@@ -495,6 +501,7 @@ body{
 /* /////////////// CONTATO /////////////// */
 .contato{
     background: url(../images/form-bg.svg) bottom right no-repeat;
+    background-size: contain;
 }
 
 .contato .descricao{
@@ -631,6 +638,33 @@ input[type=number]::-webkit-inner-spin-button {
     text-align: center;
 }
 
+.rodape .social ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.rodape .social ul li{
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    /* background-color: #ff0062; */
+    border: 2px solid #F90446;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 50px;
+    transition: border .3s;
+}
+
+.rodape .social ul li:hover{
+    border: 2px solid #FFF;
+}
+
+.rodape .social ul li img{
+    width: 100%;
+}
+
 /* /////////////// KEYFRAMES //////////////// */
 .html{
     animation: html .5s linear forwards;
@@ -740,6 +774,9 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 @media only screen and (max-width: 650px){
+    .conteudo .principal{
+        align-items: center;
+    }
     .descricao{
         text-align: center;
     }
