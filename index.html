@@ -348,35 +348,8 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./js/jquery/jquery-3.6.0.min.js"></script>
     <script src="./slick/slick.min.js"></script>
-    <script>
-        document.getElementsByClassName("menu-mobile")[0].addEventListener("click", ()=>{
-            document.getElementsByClassName("nav")[0].classList.add("abrir-menu");
-        })
-
-        document.getElementsByClassName("fechar-menu")[0].addEventListener("click", ()=>{
-            document.getElementsByClassName("nav")[0].classList.remove("abrir-menu");
-        })
-
-        let mostrar = document.querySelectorAll(".mostrar");
-
-        for(let i = 0; i < mostrar.length; i++){
-            mostrar[i].addEventListener("click", ()=>{
-
-            })
-        }
-
-
-        $('.carrossel').slick({
-            dots: true,
-            infinite: true,
-            speed: 300,
-            slidesToShow: 1,
-            adaptiveHeight: true
-        });
-
-	
-    </script>
+    <script src="./js/main.js"></script>
 </body>
 </html>

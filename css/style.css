@@ -594,6 +594,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 /* /////////////// VOLTAR AO TOPO ////////////// */
 .conteudo .btn-topo{
+    display: none;
     position: fixed;
     bottom: 50px;
     right: 50px;
@@ -666,6 +667,10 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 /* /////////////// KEYFRAMES //////////////// */
+.visivel{
+    animation: visivel .5s linear forwards;
+}
+
 .html{
     animation: html .5s linear forwards;
 }
@@ -692,6 +697,12 @@ input[type=number]::-webkit-inner-spin-button {
 
 .abrir-menu{
     animation: abrir-menu .3s ease-out forwards;
+}
+
+@keyframes visivel {
+    to{
+        visibility: 1;
+    }
 }
 
 @keyframes abrir-menu {
@@ -823,7 +834,7 @@ input[type=number]::-webkit-inner-spin-button {
     }
     .conteudo .btn-topo{
         bottom: 5px;
-        right: 5px;
+        right: 30px;
     }
     /* .certificados .carrossel .item-carrossel p{
         font-size: .8em;
