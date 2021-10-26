@@ -594,7 +594,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 /* /////////////// VOLTAR AO TOPO ////////////// */
 .conteudo .btn-topo{
-    display: none;
+    /* display: none; */
     position: fixed;
     bottom: 50px;
     right: 50px;
