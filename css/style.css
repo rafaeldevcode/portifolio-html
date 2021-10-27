@@ -761,12 +761,13 @@ input[type=number]::-webkit-inner-spin-button {
     }
 
     .cabecalho .nav{
+        display: none;
         position: fixed;
         width: auto;
         height: 100%;
         padding-left: 30px;
         top: 0;
-        right: -280px;
+        right: -255px;
         background: #000;
         z-index: 1;
     }
