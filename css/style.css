@@ -11,7 +11,7 @@
     text-decoration: none;
     box-sizing: border-box;
     border: none;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     --webkit-aparence: none;
 }
 
@@ -31,11 +31,13 @@ label::selection{
 
 html{
     background: #F90446;
+    overflow-x: hidden;
 }
 
 body{
     background: rgb(20, 20, 20);
     border: 2px solid #F90446;
+    overflow-x: hidden;
 }
 
 .descricao{
@@ -596,7 +598,8 @@ input[type=number]::-webkit-inner-spin-button {
 
 /* /////////////// VOLTAR AO TOPO ////////////// */
 .conteudo .btn-topo{
-    /* display: none; */
+    /* overflow-x: hidden; */
+    display: none;
     position: fixed;
     bottom: 50px;
     right: 50px;
@@ -836,7 +839,7 @@ input[type=number]::-webkit-inner-spin-button {
     }
     .conteudo .btn-topo{
         bottom: 5px;
-        right: 30px;
+        right: 15px;
     }
     /* .certificados .carrossel .item-carrossel p{
         font-size: .8em;

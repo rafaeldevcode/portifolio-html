@@ -42,3 +42,12 @@ $('.btn-topo a[href^="#"]').on('click', function(e) {
       scrollTop: targetOffset - 125
     }, 500);
 });
+
+$(document).ready( () => {     
+    var voltar = $(".btn-topo");
+    $(document).scroll( function() {
+      var scroll = $(document).scrollTop();
+      if(scroll >= 160)  $(voltar).fadeIn();
+      if(scroll < 159 ) $(voltar).fadeOut();
+    });       
+});
