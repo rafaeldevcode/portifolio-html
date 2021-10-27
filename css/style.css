@@ -11,6 +11,8 @@
     text-decoration: none;
     box-sizing: border-box;
     border: none;
+    overflow-x: hidden;
+    --webkit-aparence: none;
 }
 
 h1::selection,
@@ -761,13 +763,12 @@ input[type=number]::-webkit-inner-spin-button {
     }
 
     .cabecalho .nav{
-        display: none;
         position: fixed;
         width: auto;
         height: 100%;
         padding-left: 30px;
         top: 0;
-        right: -255px;
+        right: -280px;
         background: #000;
         z-index: 1;
     }
