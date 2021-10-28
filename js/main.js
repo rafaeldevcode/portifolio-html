@@ -43,6 +43,7 @@ $('.btn-topo a[href^="#"]').on('click', function(e) {
     }, 500);
 });
 
+//////////////// MOSTRAR ICONE DE VOLTAR AO TOPO ////////////////
 $(document).ready( () => {     
     var voltar = $(".btn-topo");
     $(document).scroll( function() {
@@ -51,3 +52,7 @@ $(document).ready( () => {
       if(scroll < 159 ) $(voltar).fadeOut();
     });       
 });
+
+let data = new Date();
+let ano = data.getFullYear();
+document.getElementById("ano").innerHTML = ano;
