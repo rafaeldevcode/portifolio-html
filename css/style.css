@@ -577,6 +577,7 @@ body{
     background: #000;
     transition: border .5s;
     border: 1px solid #000;
+    font-size: .8em;
 }
 
 .contato .form form .inputs input::placeholder,
@@ -722,6 +723,10 @@ input[type=number]::-webkit-inner-spin-button {
     animation: abrir-menu .3s ease-out forwards;
 }
 
+.valida{
+    animation: valida .3s linear forwards;
+}
+
 @keyframes visivel {
     to{
         visibility: 1;
@@ -767,6 +772,29 @@ input[type=number]::-webkit-inner-spin-button {
 @keyframes git {
     to{
         width: 40%;
+    }
+}
+
+@keyframes valida {
+    0%{
+        border: 2px solid rgb(0, 0, 0);
+        transform: translateX(-50px);
+    }
+    25%{
+        border: 2px solid rgb(55, 0, 0);
+        transform: translateX(50px);
+    }
+    50%{
+        border: 2px solid rgb(155, 0, 0);
+        transform: translateX(-25px);
+    }
+    75%{
+        border: 2px solid rgb(255, 0, 0);
+        transform: translateX(25px);
+    }
+    100%{
+        border: 2px solid rgb(255, 0, 0);
+        transform: translateX(0);
     }
 }
 

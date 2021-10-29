@@ -53,6 +53,47 @@ $(document).ready( () => {
     });       
 });
 
+//////////////// ADICIONAR ANO NO RODAPÉ //////////////
 let data = new Date();
 let ano = data.getFullYear();
 document.getElementById("ano").innerHTML = ano;
+
+/////////////// VALIDAR FORMULÁRIO ///////////////
+function valida (event) {
+
+    let retorno = true;
+
+        let nome = document.getElementById("nome").value;
+        let email = document.getElementById("email").value;
+        let msg = document.getElementById("menssagem").value;
+
+        if(nome == "" || nome.length < 5){
+            document.getElementById("nome").classList.add("valida");
+            return false;
+        }else{
+            document.getElementById("nome").classList.remove("valida");
+            document.getElementById("nome").style.borderColor = "#7EEA0F";
+        }
+
+        if(((email.indexOf("@") == -1) 
+            || (email.indexOf("é") != -1) 
+            || (email.indexOf("ç") != -1) 
+            || (email.indexOf("ã") != -1) 
+            || (email.indexOf("ê") != -1))){
+            document.getElementById("email").classList.add("valida");
+            return false;
+        }else{
+            document.getElementById("email").classList.remove("valida");
+            document.getElementById("email").style.borderColor = "#7EEA0F";
+        }
+
+        if(msg == "" || msg.length < 10){
+            document.getElementById("msg").classList.add("valida");
+            return false;
+        }else{
+            document.getElementById("msg").classList.remove("valida");
+            document.getElementById("msg").style.borderColor = "#7EEA0F";
+        }
+
+    return retorno;
+};
