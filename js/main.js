@@ -60,11 +60,13 @@ document.getElementById("ano").innerHTML = ano;
 
 /////////////// VALIDAR FORMULÁRIO ///////////////
 function valida (event) {
-
+    event.preventDefault();
     let retorno = true;
 
+    try{
         let nome = document.getElementById("nome").value;
         let email = document.getElementById("email").value;
+        let telefone = document.getElementById("telefone").value;
         let msg = document.getElementById("menssagem").value;
 
         if(nome == "" || nome.length < 5){
@@ -88,12 +90,44 @@ function valida (event) {
         }
 
         if(msg == "" || msg.length < 10){
-            document.getElementById("msg").classList.add("valida");
+            document.getElementById("menssagem").classList.add("valida");
             return false;
         }else{
-            document.getElementById("msg").classList.remove("valida");
-            document.getElementById("msg").style.borderColor = "#7EEA0F";
+            document.getElementById("menssagem").classList.remove("valida");
+            document.getElementById("menssagem").style.borderColor = "#7EEA0F";
         }
 
-    return retorno;
-};
+        let dados = [{Nome: nome, Email: email, Telefone: telefone, Menssagen: msg}];
+        let dadosStr = JSON.stringify(dados);
+
+        function enviarForm(){
+            $.ajax({
+                type: "POST",
+                url: "./api/index.php",
+                data: { dadosStr: dados },
+                success: (response) => {
+
+                    document.getElementById("info").style.color = "#7EEA0F";
+                    document.getElementById("info").innerHTML = "Formulário enviado com sucesso!";
+                    console.log(response);
+
+                },
+                error: (textStatus, errorThrown) => {
+
+                    document.getElementById("info").style.color = "#FF0000";
+                    document.getElementById("info").innerHTML = "Erro ao enviar formulário! Tente novamente.";
+                    console.log(textStatus, errorThrown);
+                    
+                },
+            });
+        }
+        enviarForm();
+        return retorno;
+    } catch {
+
+        document.getElementById("info").style.color = "#FF0000";
+        document.getElementById("info").innerHTML = "Erro ao enviar formulário! Tente novamente.";
+        console.error(event.message);
+
+    }
+}

@@ -557,6 +557,16 @@ body{
     flex-direction: column;
 } */
 
+.contato .form .info{
+    width: 100%;
+    height: 20px;
+}
+
+.contato .form .info p{
+    text-align: center;
+    font-size: .7em;
+}
+
 .contato .form form .inputs{
     display: flex;
     flex-direction: column;

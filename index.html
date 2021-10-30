@@ -305,7 +305,11 @@
                 <div class="image">
                     <img src="./images/enviar-form.svg" alt="Cotato">
                 </div>
-                <form action="./api/index.php" onsubmit="return valida();">
+
+                <div class="info">
+                    <p id="info"></p>
+                </div>
+                <form method="POST" onsubmit="return valida(event);">
 
                     <div class="inputs">
                         <label for="nome">Nome</label>
