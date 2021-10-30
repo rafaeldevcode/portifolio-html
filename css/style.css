@@ -3,6 +3,16 @@
     src: url(../fonts/Netron.ttf);
 }
 
+@font-face {
+    font-family: Kenyan;
+    src: url(../fonts/Kenyan.ttf);
+}
+
+@font-face {
+    font-family: Coolvetica;
+    src: url(../fonts/Coolvetica.ttf);
+}
+
 *{
     font-family: Netron;
     margin: 0;
@@ -11,8 +21,11 @@
     text-decoration: none;
     box-sizing: border-box;
     border: none;
-    /* overflow-x: hidden; */
     --webkit-aparence: none;
+}
+
+:root{
+    --cor-principal: #F90446;
 }
 
 h1::selection,
@@ -26,22 +39,22 @@ li::selection,
 span::selection,
 label::selection{
     color: #000;
-    background: #F90446;
+    background: var(--cor-principal);
 }
 
 html{
-    background: #F90446;
+    background: var(--cor-principal);
     overflow-x: hidden;
 }
 
 body{
     background: rgb(20, 20, 20);
-    border: 2px solid #F90446;
+    border: 2px solid var(--cor-principal);
     overflow-x: hidden;
 }
 
 .descricao{
-    color: #F90446;
+    color: var(--cor-principal);
     margin-bottom: 30px;
     font-size: 1.1em;
     padding: 10px;
@@ -106,7 +119,7 @@ body{
 }
 
 .cabecalho .nav ul li:hover{
-    border-bottom: 1px solid #F90446;
+    border-bottom: 1px solid var(--cor-principal);
 }
 
 .cabecalho .nav ul li img{
@@ -118,7 +131,7 @@ body{
 
 .cabecalho .nav ul li a{
     padding: 0 10px 5px 0;
-    color:#F90446;
+    color:var(--cor-principal);
     transition: color .3s;
     font-size: 1em;
 }
@@ -151,7 +164,7 @@ body{
 
 .conteudo .principal .titulos{
     background: rgb(20, 20, 20);
-    color:#F90446;
+    color:var(--cor-principal);
 }
 
 .conteudo .principal .titulos h1{
@@ -176,8 +189,7 @@ body{
     cursor: pointer;
     width: 45px;
     height: 45px;
-    /* background-color: #ff0062; */
-    border: 2px solid #F90446;
+    border: 2px solid var(--cor-principal);
     padding: 10px;
     margin: 5px;
     border-radius: 50px;
@@ -193,18 +205,15 @@ body{
 }
 
 .titulo{
-    /* padding: 20px 5px; */
-    /* background: #000; */
     background: rgb(20, 20, 20);
-    border-bottom: 2px solid #F90446;
+    border-bottom: 2px solid var(--cor-principal);
     margin-bottom: 100px;
 }
 
 .titulo h3{
     font-size: 2em;
-    color:#F90446;
+    color:var(--cor-principal);
     padding-left: 10px;
-    /* border-bottom: 2px solid #F90446; */
 }
 
 /* //////////////// CONHECIMENTOS //////////////// */
@@ -226,18 +235,17 @@ body{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    /* padding: 10px; */
 }
 
 .conhecimentos .colecao-card .card{
     background: rgb(20, 20, 20);
     cursor: pointer;
     width: 46%;
-    border: 1px solid #F90446;
+    border: 1px solid var(--cor-principal);
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
-    box-shadow: 0px 0px 10px #F90446;
+    box-shadow: 0px 0px 10px var(--cor-principal);
     transition: transform .4s;
 }
 
@@ -247,7 +255,7 @@ body{
 
 .conhecimentos .colecao-card .card h5{
     font-size: 1.3em;
-    color: #F90446;
+    color: var(--cor-principal);
 }
 
 .conhecimentos .colecao-card .card .progresso{
@@ -260,26 +268,26 @@ body{
 .conhecimentos .colecao-card .card .progresso .barra{
     width: 100%;
     height: 20px;margin: 10px 0;
-    border: 2px solid #F90446;
+    border: 2px solid var(--cor-principal);
     border-radius: 5px;
 }
 
 .conhecimentos .colecao-card .card .progresso .barra .barra-progresso{
     width: 0;
     height: 100%;
-    background: #F90446;
+    background: var(--cor-principal);
 }
 
 
 
 .conhecimentos .colecao-card .card .progresso span{
-    color: #F90446;
+    color: var(--cor-principal);
     font-size: 1em;
     width: 100%;
     text-align: right;
 }
 
-.conhecimentos .colecao-card .card .progresso span::before{
+/* .conhecimentos .colecao-card .card .progresso span::before{
     content: "";
     background: url(../images/baixo.png) center;
     background-size: contain;
@@ -287,14 +295,14 @@ body{
     cursor: pointer;
     width: 25px;
     height: 25px;
-}
+} */
 
 .conhecimentos .colecao-card .card .aprendizado{
     display: none;
 }
 
 .conhecimentos .colecao-card .card .aprendizado ul li{
-    color: #F90446;
+    color: var(--cor-principal);
     font-size: 1em;
 }
 
@@ -317,10 +325,10 @@ body{
     flex-direction: column;
     align-items: center;
     margin: 10px 0;
-    border: 1px solid #F90446;
+    border: 1px solid var(--cor-principal);
     padding: 10px;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px #F90446;
+    box-shadow: 0px 0px 10px var(--cor-principal);
 }
 
 .projetos .colecao-card .card img{
@@ -330,13 +338,13 @@ body{
 }
 
 .projetos .colecao-card .card p{
-    color: #F90446;
+    color: var(--cor-principal);
     font-size: 1em;
     margin: 10px 20px;
 }
 
 .projetos .colecao-card .card a{
-    background: #F90446;
+    background: var(--cor-principal);
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -347,13 +355,13 @@ body{
 }
 
 .projetos .colecao-card .card a::selection{
-    color: #F90446;
+    color: var(--cor-principal);
     background: #000;
 }
 
 .projetos .colecao-card .card a:hover{
     transform: scale(1.02);
-    box-shadow: 0px 0px 2px #F90446;
+    box-shadow: 0px 0px 2px var(--cor-principal);
 }
 
 .projetos .colecao-card .card a img{
@@ -386,14 +394,14 @@ body{
     align-items: center;
     border-radius: 5px;
     margin: 10px 0;
-    box-shadow: 0px 0px 10px #F90446;
-    border: 1px solid #F90446;
+    box-shadow: 0px 0px 10px var(--cor-principal);
+    border: 1px solid var(--cor-principal);
 }
 
 
 .futuramente .colecao-card .card p{
     color: #000;
-    background: #F90446;
+    background: var(--cor-principal);
     padding: 5px;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -401,16 +409,17 @@ body{
 }
 
 .futuramente .colecao-card .card p::selection{
-    color: #F90446;
+    color: var(--cor-principal);
     background: #000;
 }
 
 .futuramente .colecao-card .card img{
     width: 60%;
+    margin: 15px 0;
 }
 
 .futuramente .colecao-card .card span{
-    color: #F90446;
+    color: var(--cor-principal);
     font-size: 1.2em;
 }
 
@@ -427,8 +436,8 @@ body{
     padding: 20px;
     background: #000;
     border-radius: 5px;
-    border: 1px solid #F90446;
-    box-shadow:  0px 0px 10px #F90446;
+    border: 1px solid var(--cor-principal);
+    box-shadow:  0px 0px 10px var(--cor-principal);
 }
 
 .sobre .historia .image{
@@ -436,7 +445,7 @@ body{
     padding: 10px;
     float: right;
     margin: 0 0 10px 10px;
-    border: 1px solid #F90446;
+    border: 1px solid var(--cor-principal);
     border-radius: 5px;
 }
 
@@ -445,7 +454,7 @@ body{
 }
 
 .sobre .historia p{
-    color: #F90446;
+    color: var(--cor-principal);
     font-size: .8em;
     line-height: 2;
     text-align: justify;
@@ -458,13 +467,9 @@ body{
     width: 100%;
     max-width: 900px;
     margin: auto;
-    /* height: 600px; */
-    /* padding: 10px; */
-    /* z-index: -1; */
 }
 
 .certificados .carrossel .item-carrossel{
-    /* position: absolute; */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -475,14 +480,6 @@ body{
     width: 100%;
     margin-bottom: 20px;
 }
-
-/* .certificados .carrossel .item-carrossel p{
-    background: #F90446;
-    padding: 10px;
-    border-radius: 5px;
-    display: inline;
-    font-size: 1em;
-} */
 
 .certificados .carrossel .btns{
     width: 100%;
@@ -496,7 +493,7 @@ body{
     cursor: pointer;
     width: 45px;
     height: 45px;
-    background: #F90446;
+    background: var(--cor-principal);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -524,7 +521,7 @@ body{
 }
 
 .contato p{
-    color: #F90446;
+    color: var(--cor-principal);
     font-size: 1em;
     padding-left: 10px;
 }
@@ -535,9 +532,9 @@ body{
     max-width: 500px;
     margin: 100px auto;
     padding: 15px;
-    border: 1px solid #F90446;
+    border: 1px solid var(--cor-principal);
     border-radius: 5px;
-    box-shadow: 0px 0px 10px #F90446;
+    box-shadow: 0px 0px 10px var(--cor-principal);
 }
 
 .contato .form .image{
@@ -547,15 +544,7 @@ body{
 
 .contato .form .image img{
     width: 100%;
-    /* background: #F90446; */
-    /* border-radius: 100%; */
-    /* border: 1px solid #F90446; */
 }
-
-/* .contato .form form{
-    display: flex;
-    flex-direction: column;
-} */
 
 .contato .form .info{
     width: 100%;
@@ -574,14 +563,14 @@ body{
 }
 
 .contato .form form .inputs label{
-    color: #F90446;
+    color: var(--cor-principal);
     font-size: .8em;
 }
 
 .contato .form form .inputs input,
 .contato .form form .inputs textarea{
-    color: #F90446;
-    caret-color: #F90446;
+    color: var(--cor-principal);
+    caret-color: var(--cor-principal);
     padding: 15px 5px;
     border-radius: 5px;
     background: #000;
@@ -592,14 +581,14 @@ body{
 
 .contato .form form .inputs input::placeholder,
 .contato .form form .inputs textarea::placeholder{
-    color: #F90446;
+    color: var(--cor-principal);
     font-size: .8em;
 }
 
 .contato .form form .inputs input:focus,
 .contato .form form .inputs textarea:focus{
     outline: none;
-    border: 1px solid #F90446;
+    border: 1px solid var(--cor-principal);
 }
 
 .contato .form form .inputs textarea{
@@ -615,7 +604,7 @@ input[type=number]::-webkit-inner-spin-button {
 .contato .form form .inputs input[type="submit"]{
     cursor: pointer;
     color: #000;
-    background: #F90446;
+    background: var(--cor-principal);
     margin-top: 20px;
     font-size: 1.3em;
     transition: background .3s;
@@ -627,7 +616,6 @@ input[type=number]::-webkit-inner-spin-button {
 
 /* /////////////// VOLTAR AO TOPO ////////////// */
 .conteudo .btn-topo{
-    /* overflow-x: hidden; */
     display: none;
     position: fixed;
     bottom: 50px;
@@ -637,8 +625,8 @@ input[type=number]::-webkit-inner-spin-button {
     height: 50px;
     border-radius: 5px;
     background: #000;
-    box-shadow: 0px 0px 10px #F90446;
-    border: 1px solid #F90446;
+    box-shadow: 0px 0px 10px var(--cor-principal);
+    border: 1px solid var(--cor-principal);
     transition: transform .4s;
 }
 
@@ -669,7 +657,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .rodape .copy p{
-    color: #F90446;
+    color: var(--cor-principal);
     text-align: center;
 }
 
@@ -684,8 +672,7 @@ input[type=number]::-webkit-inner-spin-button {
     cursor: pointer;
     width: 45px;
     height: 45px;
-    /* background-color: #ff0062; */
-    border: 2px solid #F90446;
+    border: 2px solid var(--cor-principal);
     padding: 10px;
     margin: 5px;
     border-radius: 50px;
@@ -836,7 +823,7 @@ input[type=number]::-webkit-inner-spin-button {
         top: 0;
         right: -284px;
         background: #000;
-        border: 2px solid #F90446;
+        border: 2px solid var(--cor-principal);
         border-left: 0;
         z-index: 1;
     }
@@ -923,7 +910,4 @@ input[type=number]::-webkit-inner-spin-button {
         bottom: 5px;
         right: 15px;
     }
-    /* .certificados .carrossel .item-carrossel p{
-        font-size: .8em;
-    } */
 }
