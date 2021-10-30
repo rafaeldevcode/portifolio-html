@@ -547,8 +547,19 @@ body{
 }
 
 .contato .form .info{
+    display: none;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    background: #000;
+    border:  1px solid var(--cor-principal);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 20px;
+    max-width: 400px;
+    height: 50px;
 }
 
 .contato .form .info p{
@@ -724,6 +735,10 @@ input[type=number]::-webkit-inner-spin-button {
     animation: valida .3s linear forwards;
 }
 
+.mostrar{
+    animation: mostrar .5s linear forwards;
+}
+
 @keyframes visivel {
     to{
         visibility: 1;
@@ -797,6 +812,18 @@ input[type=number]::-webkit-inner-spin-button {
         border: 2px solid rgb(255, 0, 0);
         transform: translateX(0);
         transform: rotate(0);
+    }
+}
+
+@keyframes mostrar {
+    0%{
+        display: block;
+    }
+    50%{
+        opacity: .5;
+    }
+    100%{
+        opacity: 1;
     }
 }
 

@@ -109,13 +109,23 @@ function valida (event) {
 
                     document.getElementById("info").style.color = "#7EEA0F";
                     document.getElementById("info").innerHTML = "Formulário enviado com sucesso!";
+                    document.getElementsByClassName("info")[0].classList.add("mostrar");
+                    document.getElementById("nome").value = '';
+                    document.getElementById("email").value = '';
+                    document.getElementById("telefone").value = '';
+                    document.getElementById("menssagem").value = '';
                     console.log(response);
+
+                    setTimeout(()=>{
+                        document.getElementsByClassName("info")[0].classList.remove("mostrar");
+                    }, 8000)
 
                 },
                 error: (textStatus, errorThrown) => {
 
                     document.getElementById("info").style.color = "#FF0000";
                     document.getElementById("info").innerHTML = "Erro ao enviar formulário! Tente novamente.";
+                    document.getElementsByClassName("info")[0].classList.add("mostrar");
                     console.log(textStatus, errorThrown);
                     
                 },
@@ -127,6 +137,7 @@ function valida (event) {
 
         document.getElementById("info").style.color = "#FF0000";
         document.getElementById("info").innerHTML = "Erro ao enviar formulário! Tente novamente.";
+        document.getElementsByClassName("info")[0].classList.add("mostrar");
         console.error(event.message);
 
     }
