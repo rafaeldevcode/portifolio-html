@@ -1,4 +1,20 @@
-/////////////// VALIDAÇÂO FORMULÁRIO //////////////
+//////////////// MASCARA PARA TELEFONE /////////////
+document.getElementById('telefone').addEventListener('keyup', ()=>{
+    let telefone = removerCaracter(document.getElementById('telefone').value);
+    let mascara = `(${telefone.substr(0, 2)}) ${telefone.substr(2, 1)} ${telefone.substr(3, 4)}-${telefone.substr(7, 4)}`;
+
+    document.getElementById('telefone').value = mascara;
+});
+
+function removerCaracter(telefone){
+    let regex = /[^0-9]/gi;
+    telefone = telefone.replace(regex, '');
+    return telefone;
+}
+
+function validaEmail(email){
+    let regex = /[a-zA-Z0-9]/
+}
 
 /////////////// MENU MOBILE /////////////
 document.getElementsByClassName("menu-mobile")[0].addEventListener("click", ()=>{
@@ -58,16 +74,18 @@ let data = new Date();
 let ano = data.getFullYear();
 document.getElementById("ano").innerHTML = ano;
 
+document.getElementById("idade").innerHTML = ano - 1998;
+
 /////////////// VALIDAR FORMULÁRIO ///////////////
-function valida (event) {
+function valida(event) {
     event.preventDefault();
     let retorno = true;
 
     try{
         let nome = document.getElementById("nome").value;
         let email = document.getElementById("email").value;
-        let telefone = document.getElementById("telefone").value;
-        let msg = document.getElementById("menssagem").value;
+        let telefone = `${removerCaracter(document.getElementById("telefone").value)}`;
+        let msg = document.getElementById("mensagem").value;
 
         if(nome == "" || nome.length < 5){
             document.getElementById("nome").classList.add("valida");
@@ -89,56 +107,85 @@ function valida (event) {
             document.getElementById("email").style.borderColor = "#7EEA0F";
         }
 
+        if(telefone != ""){
+            if(telefone.length != 11){
+                document.getElementById("telefone").classList.add("valida");
+                return false;
+            }else{
+                telefone = `+55${telefone}`;
+
+                document.getElementById("telefone").classList.remove("valida");
+                document.getElementById("telefone").style.borderColor = "#7EEA0F";
+            }
+        }else{
+            document.getElementById("telefone").style.borderColor = "#7EEA0F";
+        }
+
         if(msg == "" || msg.length < 10){
-            document.getElementById("menssagem").classList.add("valida");
+            document.getElementById("mensagem").classList.add("valida");
             return false;
         }else{
-            document.getElementById("menssagem").classList.remove("valida");
-            document.getElementById("menssagem").style.borderColor = "#7EEA0F";
+            document.getElementById("mensagem").classList.remove("valida");
+            document.getElementById("mensagem").style.borderColor = "#7EEA0F";
         }
 
-        let dados = [{Nome: nome, Email: email, Telefone: telefone, Menssagen: msg}];
+        let dados = [{Nome: nome, Email: email, Telefone: telefone, Mensagem: msg}];
         let dadosStr = JSON.stringify(dados);
 
-        function enviarForm(){
-            $.ajax({
-                type: "POST",
-                url: "./api/index.php",
-                data: { dadosStr: dados },
-                success: (response) => {
-
-                    document.getElementById("info").style.color = "#7EEA0F";
-                    document.getElementById("info").innerHTML = "Formulário enviado com sucesso!";
-                    document.getElementsByClassName("info")[0].classList.add("mostrar");
-                    document.getElementById("nome").value = '';
-                    document.getElementById("email").value = '';
-                    document.getElementById("telefone").value = '';
-                    document.getElementById("menssagem").value = '';
-                    console.log(response);
-
-                    setTimeout(()=>{
-                        document.getElementsByClassName("info")[0].classList.remove("mostrar");
-                    }, 8000)
-
-                },
-                error: (textStatus, errorThrown) => {
-
-                    document.getElementById("info").style.color = "#FF0000";
-                    document.getElementById("info").innerHTML = "Erro ao enviar formulário! Tente novamente.";
-                    document.getElementsByClassName("info")[0].classList.add("mostrar");
-                    console.log(textStatus, errorThrown);
-                    
-                },
-            });
-        }
-        enviarForm();
+        enviarForm(dados, dadosStr);
         return retorno;
     } catch {
 
-        document.getElementById("info").style.color = "#FF0000";
-        document.getElementById("info").innerHTML = "Erro ao enviar formulário! Tente novamente.";
-        document.getElementsByClassName("info")[0].classList.add("mostrar");
-        console.error(event.message);
+        mensagem("#FF0000", "Este é um erro interno! Tente novamente mais tarde.");
+        console.error(event);
 
     }
+}
+
+////////////////// ENVIAR FORMULÁRIO ///////////
+function enviarForm(dados, dadosStr){
+    $.ajax({
+        type: "POST",
+        url: "./php/index.php",
+        data: { dadosStr: dados },
+        success: (response) => {
+
+            limparCampos()
+            mensagem("#7EEA0F", "Formulário enviado com sucesso!")
+            console.log(response);
+
+        },
+        error: (textStatus, errorThrown) => {
+
+            mensagem("#FF0000", "Erro ao enviar formulário! Tente novamente.")
+            console.log(textStatus, errorThrown);
+            
+        },
+    });
+}
+
+/////////// FUNÇÃO PARA OCULTAR MENSAGEM DO ENVIO DO FORMULÁRIO ////////////
+function mensagem(color, msg){
+    document.getElementById("info").style.color = color;
+    document.getElementById("info").innerHTML = msg;
+    document.getElementById("info").style.borderColor = color;
+    document.getElementsByClassName("info")[0].classList.add("mostrar");
+
+    setTimeout(()=>{
+        document.getElementsByClassName("info")[0].classList.remove("mostrar");
+    }, 8000)
+}
+
+////////// FUNÇÃO PARA LIMPAR CAMPOS FORMULÁRIO /////////
+function limparCampos(){
+    let inputs = document.querySelectorAll('input');
+
+    for(let i = 0; i < inputs.length; i++){
+        inputs[i].value = '';
+        inputs[i].style.borderColor = '#000000'
+    }
+
+    document.getElementById('enviar').value = 'Enviar'
+    document.getElementById("mensagem").value = '';
+    document.getElementById("mensagem").style.borderColor = '#000000';
 }

@@ -1,14 +1,17 @@
 <?php
 
-    $destino = 'rafaelvieirapalmital@outlook.com';
+    $destino = 'contato@rafael-vierira.com';
     $assunto = 'Mensagem enviada através do site de portifólio';
 
     $dados = $_POST;
 
-    $nome = $dados['nome'];
-    $email = $dados['email'];
-    $telefone = $dados['telefone'];
-    $menssagem = $dados['menssagem'];
+    // print_r($dados);
+    // exit();
+
+    $nome = $dados['dadosStr'][0]['Nome'];
+    $email = $dados['dadosStr'][0]['Email'];
+    $telefone = $dados['dadosStr'][0]['Telefone'];
+    $mensagem = $dados['dadosStr'][0]['Mensagem'];
 
     $data = date('d/m/y');
     $hora = date('H:I:S');
@@ -32,7 +35,7 @@
                 <p><b>Nome: {$nome}</b></p>
                 <p><b>E-mail: {$email}</b></p>
                 <p><b>Telefone: {$telefone}</b></p>
-                <p><b>Mensagem: {$menssagem}</b></p>
+                <p><b>Mensagem: {$mensagem}</b></p>
 
                 <p>Esse E-mail foi enviado no dia {$data} às {$hora}.</p>
             </div>
@@ -40,10 +43,10 @@
 
     $headers =  "Content-Type:text/html; charset=UTF-8\n";
     $headers .= "De: {$nome}, Para: <{$destino}>";
-    $headers .= "X-Sender:  <sistema@dominio.com.br>\n";
+    $headers .= "X-Sender:  <contato@rafael-vierira.com>\n";
     $headers .= "X-Mailer: PHP  v".phpversion()."\n";
     $headers .= "X-IP:  ".$_SERVER['REMOTE_ADDR']."\n";
-    $headers .= "Return-Path:  <sistema@dominio.com.br>\n";
+    $headers .= "Return-Path:  <contato@rafael-vierira.com>\n";
     $headers .= "MIME-Version: 1.0\n";
 
-    mail($destino, $assunto, $corpo_emmail, $headers);
+    $enviar_email = mail($destino, $assunto, $corpo_emmail, $headers);
