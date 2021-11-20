@@ -1,3 +1,5 @@
+mensagem("#FF0000", "FORMULÁRIO AINDA NÃO FUNCIIONAL")
+
 //////////////// MASCARA PARA TELEFONE /////////////
 document.getElementById('telefone').addEventListener('keyup', ()=>{
     let telefone = removerCaracter(document.getElementById('telefone').value);
