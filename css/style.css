@@ -101,6 +101,11 @@ body{
     width: 25px;
     margin: 10px 10px 20px;
     float: right;
+    transition: transform .5s;
+}
+
+.cabecalho .nav .fechar-menu:hover{
+    transform: rotateZ(-180deg);
 }
 
 .cabecalho .nav .fechar-menu img{
@@ -800,6 +805,12 @@ input[type=number]::-webkit-inner-spin-button {
 
 .mostrar{
     animation: mostrar .5s linear forwards;
+}
+
+@keyframes rodar {
+    to{
+        transform: rotate(180deg);
+    }
 }
 
 @keyframes visivel {
