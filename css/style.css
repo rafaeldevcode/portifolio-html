@@ -102,7 +102,7 @@ body{
 }
 
 .cabecalho .nav .fechar-menu:hover{
-    transform: rotateZ(-180deg);
+    transform: rotateZ(-90deg);
 }
 
 .cabecalho .nav .fechar-menu i{
@@ -773,6 +773,56 @@ input[type=number]::-webkit-inner-spin-button {
     font-size: 20px;
 }
 
+/* ///////////////// MOSTRAR IMAGEM EM ZOOM //////////// */
+.zoomImage{
+    animation: zoomImage .8s ease-out forwards;
+}
+@keyframes zoomImage{
+    0%{
+        width: 0%;
+        height: 0%;
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+    }
+}
+.zoom-image{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.582);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.zoom-image .fechar-image{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.zoom-image .fechar-image i{
+    color: var(--cor-principal);
+    font-size: 32px;
+    cursor: pointer;
+    transition: transform .5s;
+}
+
+.zoom-image .fechar-image i:hover{
+    transform: rotate(-90deg);
+}
+
+.zoom-image img{
+    width: 90%;
+}
+
 /* /////////////// KEYFRAMES //////////////// */
 .visivel{
     animation: visivel .5s linear;
@@ -961,6 +1011,14 @@ input[type=number]::-webkit-inner-spin-button {
         justify-content: center;
         align-items: center;
         font-size: 20px;
+    }
+
+    .cabecalho .nav .social li i{
+        transition: color .3s;
+    }
+
+    .cabecalho .nav .social li i:hover{
+        color: #FFF;
     }
 }
 

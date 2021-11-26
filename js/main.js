@@ -191,3 +191,48 @@ function limparCampos(){
     document.getElementById("mensagem").value = '';
     document.getElementById("mensagem").style.borderColor = '#000000';
 }
+
+//////////// FUÇÃO PARA DAR ZOOM NA IMAGEM //////////////
+let zoom = document.querySelectorAll('.zoom');
+
+for(let i = 0; i < zoom.length; i++){
+    zoom[i].addEventListener('click', ()=>{
+        let alt = zoom[1].alt;
+
+        let section = document.createElement('section')
+            section.setAttribute('class', 'zoom-image zoomImage');
+
+        let div = document.createElement('div');
+            div.setAttribute('class', 'fechar-image');
+        
+        let img = document.createElement('img');
+            img.setAttribute('src', `./images/BKP/projeto-0${i+1}.png`)
+            img.setAttribute('alt', alt);
+
+            section.appendChild(div);
+            section.appendChild(img);
+
+        let icone = document.createElement('i');
+            icone.setAttribute('class', 'fas fa-times')
+
+            div.appendChild(icone);
+
+        document.querySelector('body').appendChild(section);
+
+        fecharImage();
+    })
+}
+
+function fecharImage(){
+    let fecharImage = document.querySelectorAll('.fechar-image');
+
+    for(let i = 0; i < fecharImage.length; i++){
+        document.getElementsByClassName('fechar-image')[i].addEventListener('click', ()=>{
+            let zoom = document.querySelectorAll('.zoom');
+            
+            for(let i = 0; i < zoom.length; i++){
+                document.getElementsByClassName('zoom-image')[i].style.display = 'none';
+            }
+        })
+    }
+}
