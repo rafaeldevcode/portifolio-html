@@ -197,7 +197,9 @@ let zoom = document.querySelectorAll('.zoom');
 
 for(let i = 0; i < zoom.length; i++){
     zoom[i].addEventListener('click', ()=>{
-        let alt = zoom[1].alt;
+        let alt = zoom[i].alt;
+        let src = zoom[i].src.replace('jpeg', 'png');
+        console.log(src);
 
         let section = document.createElement('section')
             section.setAttribute('class', 'zoom-image zoomImage');
@@ -206,7 +208,7 @@ for(let i = 0; i < zoom.length; i++){
             div.setAttribute('class', 'fechar-image');
         
         let img = document.createElement('img');
-            img.setAttribute('src', `./images/BKP/projeto-0${i+1}.png`)
+            img.setAttribute('src', `${src.substring(0, 29)}original${src.substring(28)}`)
             img.setAttribute('alt', alt);
 
             section.appendChild(div);
@@ -214,6 +216,7 @@ for(let i = 0; i < zoom.length; i++){
 
         let icone = document.createElement('i');
             icone.setAttribute('class', 'fas fa-times')
+            icone.setAttribute('id', 'fechar-image')
 
             div.appendChild(icone);
 
@@ -224,15 +227,15 @@ for(let i = 0; i < zoom.length; i++){
 }
 
 function fecharImage(){
-    let fecharImage = document.querySelectorAll('.fechar-image');
 
-    for(let i = 0; i < fecharImage.length; i++){
-        document.getElementsByClassName('fechar-image')[i].addEventListener('click', ()=>{
-            let zoom = document.querySelectorAll('.zoom');
-            
-            for(let i = 0; i < zoom.length; i++){
-                document.getElementsByClassName('zoom-image')[i].style.display = 'none';
-            }
-        })
-    }
+    document.getElementById('fechar-image').addEventListener('click', ()=>{
+
+        document.querySelector('.zoom-image').classList.remove('zoomImage');
+        document.querySelector('.zoom-image').classList.add('zoomImageReverse');
+
+        setTimeout(()=>{
+            document.getElementsByClassName('zoom-image')[0].remove();
+        }, 500);
+    })
+
 }

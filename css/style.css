@@ -373,12 +373,8 @@ body{
     box-shadow: 0px 0px 2px var(--cor-principal);
 }
 
-.projetos .colecao-card .card a img{
-    width: 28px;
-    height: 28px;
-    background: #000;
-    border-radius: 50px;
-    padding: 2px;
+.projetos .colecao-card .card a i{
+    font-size: 22px;
     margin-left: 5px;
 }
 
@@ -460,6 +456,7 @@ body{
     border-radius: 5px;
     margin-bottom: 10px;
     font-size: 1.5em;
+    text-align: center;
 }
 
 .futuramente .colecao-card .card p::selection{
@@ -773,20 +770,17 @@ input[type=number]::-webkit-inner-spin-button {
     font-size: 20px;
 }
 
+.rodape .social p a{
+    color: var(--cor-principal);
+    font-size: .8em;
+    transition: color .5s;
+}
+
+.rodape .social p a:hover{
+    color: #FFF;
+}
+
 /* ///////////////// MOSTRAR IMAGEM EM ZOOM //////////// */
-.zoomImage{
-    animation: zoomImage .8s ease-out forwards;
-}
-@keyframes zoomImage{
-    0%{
-        width: 0%;
-        height: 0%;
-    }
-    100%{
-        width: 100%;
-        height: 100%;
-    }
-}
 .zoom-image{
     position: fixed;
     top: 0;
@@ -794,18 +788,20 @@ input[type=number]::-webkit-inner-spin-button {
     width: 100%;
     height: 100%;
     margin: auto;
-    padding: 10px;
+    padding: 20px;
     background: rgba(0, 0, 0, 0.582);
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    z-index: 1;
 }
 
 .zoom-image .fechar-image{
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     justify-content: flex-end;
+    padding: 20px;
 }
 
 .zoom-image .fechar-image i{
@@ -820,7 +816,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .zoom-image img{
-    width: 90%;
+    width: 100%;
 }
 
 /* /////////////// KEYFRAMES //////////////// */
@@ -862,6 +858,14 @@ input[type=number]::-webkit-inner-spin-button {
 
 .mostrar{
     animation: mostrar .5s linear forwards;
+}
+
+.zoomImage{
+    animation: zoomImage .5s ease-out forwards;
+}
+
+.zoomImageReverse{
+    animation: zoomImageReverse .5s ease-out forwards;
 }
 
 @keyframes rodar {
@@ -958,6 +962,28 @@ input[type=number]::-webkit-inner-spin-button {
     }
     100%{
         opacity: 1;
+    }
+}
+
+@keyframes zoomImage{
+    0%{
+        width: 0%;
+        height: 0%;
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@keyframes zoomImageReverse{
+    0%{
+        width: 100%;
+        height: 100%;
+    }
+    100%{
+        width: 0%;
+        height: 0%;
     }
 }
 
