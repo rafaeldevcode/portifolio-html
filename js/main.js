@@ -198,8 +198,7 @@ let zoom = document.querySelectorAll('.zoom');
 for(let i = 0; i < zoom.length; i++){
     zoom[i].addEventListener('click', ()=>{
         let alt = zoom[i].alt;
-        let src = zoom[i].src.replace('jpeg', 'png');
-        console.log(src);
+        let src = zoom[i].src.replace('jpeg', 'png').replace('https://rafael-vieira.com/images', '');
 
         let section = document.createElement('section')
             section.setAttribute('class', 'zoom-image zoomImage');
@@ -208,7 +207,7 @@ for(let i = 0; i < zoom.length; i++){
             div.setAttribute('class', 'fechar-image');
         
         let img = document.createElement('img');
-            img.setAttribute('src', `${src.substring(0, 29)}original${src.substring(28)}`)
+            img.setAttribute('src', `./images/original${src}`)
             img.setAttribute('alt', alt);
 
             section.appendChild(div);
