@@ -1,0 +1,87 @@
+/* CONFIG. LOGO */
+#logo{
+    display: flex;
+    align-items: center;
+}
+
+#logo h1{
+    margin-left: 10px;
+}
+
+/* PAGINA INICAIAL */
+.imgBanner{
+    height: 800px;
+}
+
+.cursos{
+    margin-top: 5px;
+}
+
+.cursos h1{
+    padding: 10px;
+    font-size: 50px;
+}
+
+.cursos h2{
+    text-align: center;
+    margin-top: 4px;
+}
+
+.cursos p{
+    text-align: justify;
+    padding: 4px;
+}
+
+.cursos .borda-div{
+    border: none;
+}
+
+.cursos .card{
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: 576px){
+    .cursos img{
+        height: 170px;
+    }
+}
+
+/* CONTATOS */
+.contatoLogo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contatoLogo img{
+    width: 100px;
+}
+
+.jumbotron{
+    margin-top: 30px;
+}
+
+.contato iframe{
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.contato input,
+.contato select,
+.contato textarea{
+    margin-bottom: 10px;
+    resize: none;
+}
+
+.contato textarea{
+    height: 110px;
+}
+
+/* RODAPE */
+.rodape-w img{
+    width: 35px;
+}
+
+.rodape-w h1{
+    font-size: 18px;
+}

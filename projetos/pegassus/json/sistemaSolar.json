@@ -1,0 +1,12 @@
+{ "sistemaSolar" : [
+    {   
+        "imagen": "../img/sistemaSolar/terra.jpg",
+        "natureza":"Planeta",
+        "nome":"Terra",
+        "temperatura":"18 °C",
+        "orbita":"365 dias",
+        "distancia":"149 600 000 km",
+        "atsmofera":"Oxigênio",
+        "compossicao":"Água",
+        "id":1}
+] }

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEGASUS - DEV</title>
+    <link rel="shortcut icon" href="../img/icon/logo2.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/json.css">
+    <link rel="stylesheet" href="../css/stilos.css">
+    <link rel="stylesheet" href="../css/mobile.css" media="screen and (max-width:400px)">
+    <link rel="stylesheet" href="../css/mobile-ls.css" media="screen and (min-width:401px) and (max-width:580px)">
+    <link rel="stylesheet" href="../css/tablet.css" media="screen and (min-width:581px) and (max-width:900px)">
+    <link rel="stylesheet" href="../css/desktop.css" media="screen and (min-width:901px)">
+
+</head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <!-- LOGO -->
+        <section class="header">
+            <div class="logo 
+                        col-desktop-3
+                        col-tablet-4
+                        col-mobile-4">
+                <img src="../img/icon/logo.png" alt="Pegasus-dev">
+            </div>
+
+            <!-- MAIN MENU -->
+            <div class="mainMenu">
+                <!-- MENU DESKTOP -->
+                <nav class="desktopMenuNav">
+                    <a href="index.html">inicio</a>
+                    <a href="about.html">sobre</a>
+                    <a href="contact.html">contato</a>
+                </nav>
+                <!-- MENU MOBILE -->
+                <div class="mobileMenu">
+                    <input type="checkbox" id="checkboxMenu">
+
+                    <label for="checkboxMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+            <!-- MOVEL SIDE MENU -->
+            <div class="movelSideMenu">
+                    <nav>
+                        <a href="index.html">inicio</a>
+                        <a href="about.html">sobre</a>
+                        <a href="contact.html">contato</a>
+                    </nav>
+            </div>
+        </section>
+    </header>
+
+    <!-- MENU + CAROUSEL -->
+    <section class="menuCarousel">
+        <!-- SIDE IMAGE MENU -->
+        <aside class="sideImageMenu">
+            <a href="https://github.com/rafa600rr" target="blank"><img src="../img/iconMenu/github.png" alt="GitHub"></a>
+            <a href="https://www.facebook.com/rafaelvieirapalmital" target="blank"><img src="../img/iconMenu/face.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/RAFA_600RR" target="blank"><img src="../img/iconMenu/insta.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/in/rafael-vieira-b7061a1b4/"  target="blank"><img src="../img/iconMenu/link.png" alt="LinkDin"></a>
+            <a href="apiSW.html"><img src="../img/iconMenu/json.png" alt="JSON" target="blank"></a>
+        </aside>
+    
+        <!-- CAROUSEL -->
+        <div class="carousel">       
+            <div>
+                <div class="imgCarousel imgCarouselVisible">
+                    <img src="../img/banner/banner-1.jpg" alt="">
+                </div>
+    
+                <div class="imgCarousel">
+                    <img src="../img/banner/banner-2.jpg" alt="">
+                </div>
+    
+                <div class="imgCarousel">
+                    <img src="../img/banner/banner-3.jpg" alt="">
+                </div>
+    
+                <div class="imgCarousel">
+                    <img src="../img/banner/banner-4.jpg" alt="">
+                </div>
+            </div>
+
+            <!-- BUTTONS OF CAROUSEL -->
+            <div class="buttonActions">
+                <button id="buttonPrev">
+                     < 
+                </button>
+
+                <button id="buttonNext">
+                     > 
+                </button>
+            </div>
+        </div>
+    </section>
+
+        <!--  PAGE BODY -->
+        <main class="mainContent
+                    col-desktop-7
+                    col-tablet-8
+                    col-mobile-12">
+
+            <section class="json">
+                <h1>gostaria de saber um pouco mais sobre STAR WARS?</h1>
+
+                <!-- API STAR WARS -->
+                <div class="buttonsApi">
+
+                    <button><a href="swPeople.html">pessoas</a></button>
+                    <button><a href="swPlanets.html">planetas</a></button>
+                    <button><a href="swStarship.html">naves</a></button>
+                    <button><a href="swFilms.html">filmes</a></button>
+                    <button><a href="swSpecies.html">espécies</a></button>
+                    <button><a href="swVehicles.html">veículos</a></button>
+
+                </div>
+
+                <!-- CARD STAR WARS -->
+                <div class="api">
+                    <figure>
+
+                        <img src="../img/sistemaSolar/starWars.jpg" id="img">
+
+                    </figure>
+                </div>
+
+                <!-- ADMIN SECTION -->
+                <div id="link">
+                    <a href="login.html">área admin</a>
+                </div>
+            </section>
+        </main>
+        
+        <!-- RODAPÉ -->
+        <footer>
+    
+            <div>
+                <p>RAFAEL VIEIRA | 2020 | Fotos STAR WARS => <a href="http://colorindonuvens.com" target="blank">Colorindo Nuvens</a></p>
+            </div>
+    
+        </footer>
+
+    <!-- JS -->
+    <script src="../js/animation.js"></script>
+    <script src="../js/carousel.js"></script>
+    <!-- <script src="../js/api.js"></script> -->
+</body>
+</html>

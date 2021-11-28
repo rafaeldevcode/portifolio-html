@@ -1,0 +1,91 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font: 14px sans-serif; 
+    list-style: none;
+}
+
+/* CAFE DA MANHA[INICIO] */
+#menu_drinks{
+    background-image: url(../img/drinks/drinks.jpg);
+    background-size: cover;
+    width: 1010px;
+    height: 500px;
+    margin: 0 auto 10px;
+    padding-top: 60px;
+}
+
+#menu_itens{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#menu_drinks li{
+    margin: 5px;
+    border-bottom: 4px solid rgb(255,0,0);
+}
+
+#drinks1{
+    background-image: url(../img/drinks/01.jpg);
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+}
+
+#drinks2{
+    background-image: url(../img/drinks/02.jpg);
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+}
+
+#drinks3{
+    background-image: url(../img/drinks/03.jpg);
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+}
+
+#drinks4{
+    background-image: url(../img/drinks/04.jpg);
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+}
+
+#drinks5{
+    background-image: url(../img/drinks/05.jpg);
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+}
+
+#drinks6{
+    background-image: url(../img/drinks/06.jpg);
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+}
+
+#drinks7{
+    background-image: url(../img/drinks/07.jpg);
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+}
+
+#menu_itens p{
+    width: 200px;
+    height: 190px;
+    padding-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    opacity: 0;
+    transition: background-color 0.5s, opacity 0.5s;
+}
+
+#menu_itens p:hover{
+    background-color: rgba(255,255,255, 0.8);
+    opacity: 1;
+}
