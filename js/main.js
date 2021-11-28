@@ -198,7 +198,8 @@ let zoom = document.querySelectorAll('.zoom');
 for(let i = 0; i < zoom.length; i++){
     zoom[i].addEventListener('click', ()=>{
         let alt = zoom[i].alt;
-        let src = zoom[i].src.replace('jpeg', 'png').replace('https://rafael-vieira.com/images', '');
+        let src = zoom[i].src.replace('jpeg', 'png').replace('https://www.rafael-vieira.com/images', '');
+        // let src = zoom[i].src.replace('jpeg', 'png').replace('http://127.0.0.1:5500/images', '');
 
         let section = document.createElement('section')
             section.setAttribute('class', 'zoom-image zoomImage');
