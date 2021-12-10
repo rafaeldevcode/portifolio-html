@@ -269,12 +269,31 @@ body{
     transform: scale(1.02);
 }
 
-.conhecimentos .colecao-card .card h5{
-    font-size: 1.3em;
+.conhecimentos .colecao-card .card .titulo{
+    display: flex;
+    align-items: flex-start;
+    border: none;
+    border-top: 3px solid var(--cor-principal);
     color: var(--cor-principal);
+    margin: 0;
 }
 
-.conhecimentos .colecao-card .card .progresso{
+.conhecimentos .colecao-card .card .titulo i{
+    font-size: 3.5em;
+    margin-right: 20px;
+}
+
+.conhecimentos .colecao-card .card .lista-conhecimentos{
+    color: var(--cor-principal);
+    margin: 30px 0 0 30px;
+}
+
+/* .conhecimentos .colecao-card .card h5{
+    font-size: 1.3em;
+    color: var(--cor-principal);
+} */
+
+/* .conhecimentos .colecao-card .card .progresso{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -292,16 +311,16 @@ body{
     width: 0;
     height: 100%;
     background: var(--cor-principal);
-}
+} */
 
 
 
-.conhecimentos .colecao-card .card .progresso span{
+/* .conhecimentos .colecao-card .card .progresso span{
     color: var(--cor-principal);
     font-size: 1em;
     width: 100%;
     text-align: right;
-}
+} */
 
 /* .conhecimentos .colecao-card .card .progresso span::before{
     content: "";
@@ -313,14 +332,14 @@ body{
     height: 25px;
 } */
 
-.conhecimentos .colecao-card .card .aprendizado{
+/* .conhecimentos .colecao-card .card .aprendizado{
     display: none;
 }
 
 .conhecimentos .colecao-card .card .aprendizado ul li{
     color: var(--cor-principal);
     font-size: 1em;
-}
+} */
 
 /* /////////////// PROJETOS ////////////// */
 .projetos{
