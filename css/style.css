@@ -92,7 +92,6 @@ body{
     display: none;
     width: 30px;
     margin: 10px;
-    z-index: 1;
 }
 
 .cabecalho .menu-mobile i{

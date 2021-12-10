@@ -207,12 +207,12 @@ function limparCampos(){
 
 //////////// FUÇÃO PARA DAR ZOOM NA IMAGEM //////////////
 let zoom = document.querySelectorAll('.zoom');
+let mobile =  navigator.userAgentData.mobile;
 
 for(let i = 0; i < zoom.length; i++){
     zoom[i].addEventListener('click', ()=>{
         let alt = zoom[i].alt;
-        let src = zoom[i].src.replace('jpeg', 'png').replace('https://rafael-vieira.com/images', '');
-        // let src = zoom[i].src.replace('jpeg', 'png').replace('http://127.0.0.1:5500/images', '');
+        let src = mobile == false ? zoom[i].src.replace('jpeg', 'png').replace('https://www.rafael-vieira.com/images', '') : zoom[i].src.replace('jpeg', 'png').replace('https://rafael-vieira.com/images', '');
 
         let section = document.createElement('section')
             section.setAttribute('class', 'zoom-image zoomImage');
