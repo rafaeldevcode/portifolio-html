@@ -168,13 +168,26 @@ function enviarForm(dados, dadosStr){
 
 /////////// FUNÇÃO PARA OCULTAR MENSAGEM DO ENVIO DO FORMULÁRIO ////////////
 function mensagem(color, msg){
-    document.getElementById("info").style.color = color;
-    document.getElementById("info").innerHTML = msg;
-    document.getElementById("info").style.borderColor = color;
-    document.getElementsByClassName("info")[0].classList.add("mostrar");
+    let body = document.querySelector('body');
+
+    let p = document.createElement('p');
+        p.setAttribute('id', 'info');
+        p.style.borderColor = color;
+        p.style.color = color;
+        p.innerHTML = msg;
+
+    let div = document.createElement('div');
+        div.setAttribute('class', 'info mostrar')
+        div.appendChild(p);
+
+    body.appendChild(div);
 
     setTimeout(()=>{
         document.getElementsByClassName("info")[0].classList.remove("mostrar");
+
+        setTimeout(()=>{
+            document.querySelector('.info').remove();
+        }, 500)
     }, 8000)
 }
 
