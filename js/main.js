@@ -208,7 +208,7 @@ for(let i = 0; i < zoom.length; i++){
             div.setAttribute('class', 'fechar-image');
         
         let img = document.createElement('img');
-            img.setAttribute('src', `./images/original${src}`)
+            img.setAttribute('src', `./images/original/${src}`)
             img.setAttribute('alt', alt);
 
             section.appendChild(div);
