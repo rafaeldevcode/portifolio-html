@@ -175,8 +175,12 @@ body{
 }
 
 .conteudo .principal .titulos{
-    background: rgb(20, 20, 20);
+    background: rgba(20, 20, 20, 0.8);
     color:var(--cor-principal);
+    border-radius: 5px;
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	-moz-backdrop--filter: blur(12px);
 }
 
 .conteudo .principal .titulos h1{
@@ -195,6 +199,7 @@ body{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    border-radius: 5px;
 }
 
 .conteudo .principal .titulos ul li{
@@ -254,7 +259,7 @@ body{
 }
 
 .conhecimentos .colecao-card .card{
-    background: rgb(20, 20, 20);
+    background: rgba(20, 20, 20, 0.8);
     cursor: pointer;
     width: 46%;
     border: 1px solid var(--cor-principal);
@@ -263,6 +268,9 @@ body{
     padding: 10px;
     box-shadow: 0px 0px 10px var(--cor-principal);
     transition: transform .4s;
+    backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	-moz-backdrop--filter: blur(12px);
 }
 
 .conhecimentos .colecao-card .card:hover{
@@ -276,6 +284,7 @@ body{
     border-top: 3px solid var(--cor-principal);
     color: var(--cor-principal);
     margin: 0;
+    background: transparent;
 }
 
 .conhecimentos .colecao-card .card .titulo i{
@@ -301,7 +310,7 @@ body{
 }
 
 .projetos .colecao-card .card{
-    background: rgb(20, 20, 20);
+    background: rgba(20, 20, 20, 0.8);
     width: 35%;
     display: flex;
     flex-direction: column;
@@ -311,6 +320,9 @@ body{
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px var(--cor-principal);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    -moz-backdrop-filter: blur(12px);
 }
 
 .projetos .colecao-card .card img{
@@ -410,7 +422,7 @@ body{
 
 .futuramente .colecao-card .card{
     width: 30%;
-    background: #000;
+    background: rgba(0, 0, 0, 0.8);
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -419,6 +431,9 @@ body{
     margin: 10px 0;
     box-shadow: 0px 0px 10px var(--cor-principal);
     border: 1px solid var(--cor-principal);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+	-moz-backdrop--filter: blur(12px);
 }
 
 
@@ -560,7 +575,7 @@ body{
 }
 
 .contato .form{
-    background: rgb(20, 20, 20);
+    background: rgba(20, 20, 20, 0.8);
     width: 100%;
     max-width: 500px;
     margin: 100px auto;
@@ -568,6 +583,9 @@ body{
     border: 1px solid var(--cor-principal);
     border-radius: 5px;
     box-shadow: 0px 0px 10px var(--cor-principal);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+	-moz-backdrop--filter: blur(12px);
 }
 
 .contato .form .image{
@@ -762,16 +780,18 @@ input[type=number]::-webkit-inner-spin-button {
     height: 100%;
     margin: auto;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.582);
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: row-reverse;
     z-index: 1;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+	-moz-backdrop--filter: blur(12px);
 }
 
 .zoom-image .fechar-image{
-    /* width: 100%; */
     display: flex;
     justify-content: flex-end;
     padding: 20px;
