@@ -211,6 +211,7 @@ let mobile =  navigator.userAgentData.mobile;
 
 for(let i = 0; i < zoom.length; i++){
     zoom[i].addEventListener('click', ()=>{
+        let body = document.querySelector('body');
         let alt = zoom[i].alt;
         let src = mobile == false ? zoom[i].src.replace('jpeg', 'png').replace('https://www.rafael-vieira.com/images', '') : zoom[i].src.replace('jpeg', 'png').replace('https://rafael-vieira.com/images', '');
 
@@ -233,15 +234,17 @@ for(let i = 0; i < zoom.length; i++){
 
             div.appendChild(icone);
 
-        document.querySelector('body').appendChild(section);
+        body.appendChild(section);
+        body.style.overflow = 'hidden';
 
-        fecharImage();
+        fecharImage(body);
     })
 }
 
-function fecharImage(){
+function fecharImage(body){
 
     document.getElementById('fechar-image').addEventListener('click', ()=>{
+        body.style.overflow = 'auto';
 
         document.querySelector('.zoom-image').classList.remove('zoomImage');
         document.querySelector('.zoom-image').classList.add('zoomImageReverse');
