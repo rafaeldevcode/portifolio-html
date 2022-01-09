@@ -779,6 +779,7 @@ input[type=number]::-webkit-inner-spin-button {
 /* ///////////////// MOSTRAR IMAGEM EM ZOOM //////////// */
 .zoom-image{
     overflow-y: auto;
+    overflow-x: hidden;
     position: fixed;
     top: 0;
     left: 0;
@@ -815,7 +816,8 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .zoom-image img{
-    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 /* /////////////// KEYFRAMES //////////////// */
