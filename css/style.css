@@ -778,7 +778,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 /* ///////////////// MOSTRAR IMAGEM EM ZOOM //////////// */
 .zoom-image{
-    overflow: auto;
+    overflow-y: auto;
     position: fixed;
     top: 0;
     left: 0;
@@ -823,30 +823,6 @@ input[type=number]::-webkit-inner-spin-button {
     animation: visivel .5s linear;
 }
 
-.html{
-    animation: html .5s linear forwards;
-}
-
-.css{
-    animation: css .5s linear forwards;
-}
-
-.js{
-    animation: js .5s linear forwards;
-}
-
-.node{
-    animation: node .5s linear forwards;
-}
-
-.wordpress{
-    animation: wordpress .5s linear forwards;
-}
-
-.git{
-    animation: git .5s linear forwards;
-}
-
 .abrir-menu{
     animation: abrir-menu .3s ease-out forwards;
 }
@@ -885,42 +861,6 @@ input[type=number]::-webkit-inner-spin-button {
 @keyframes abrir-menu {
     to{
         right: 0;
-    }
-}
-
-@keyframes html {
-    to{
-        width: 80%;
-    }
-}
-
-@keyframes css {
-    to{
-        width: 60%;
-    }
-}
-
-@keyframes js {
-    to{
-        width: 20%;
-    }
-}
-
-@keyframes node {
-    to{
-        width: 10%;
-    }
-}
-
-@keyframes wordpress {
-    to{
-        width: 20%;
-    }
-}
-
-@keyframes git {
-    to{
-        width: 40%;
     }
 }
 
@@ -1007,7 +947,7 @@ input[type=number]::-webkit-inner-spin-button {
         height: 100%;
         padding-left: 30px;
         top: 0;
-        right: -284px;
+        right: -295px;
         background: #000;
         border: 2px solid var(--cor-principal);
         border-left: 0;

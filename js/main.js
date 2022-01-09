@@ -235,7 +235,8 @@ for(let i = 0; i < zoom.length; i++){
             div.appendChild(icone);
 
         body.appendChild(section);
-        body.style.overflow = 'hidden';
+        body.style.overflowY = 'hidden';
+        document.querySelector('html').style.overflowY = 'hidden';
 
         fecharImage(body);
     })
@@ -244,7 +245,8 @@ for(let i = 0; i < zoom.length; i++){
 function fecharImage(body){
 
     document.getElementById('fechar-image').addEventListener('click', ()=>{
-        body.style.overflow = 'auto';
+        document.querySelector('html').style.overflowY = 'auto';
+        body.style.overflowY = 'auto';
 
         document.querySelector('.zoom-image').classList.remove('zoomImage');
         document.querySelector('.zoom-image').classList.add('zoomImageReverse');
