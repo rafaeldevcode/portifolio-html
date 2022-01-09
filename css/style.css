@@ -773,6 +773,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 /* ///////////////// MOSTRAR IMAGEM EM ZOOM //////////// */
 .zoom-image{
+    overflow: auto;
     position: fixed;
     top: 0;
     left: 0;
