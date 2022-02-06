@@ -1,5 +1,8 @@
 mensagem("#FF0000", "FORMULÁRIO AINDA NÃO FUNCIIONAL")
 
+////////// INICIAR ANIMAÇÕES SCROLL
+AOS.init();
+
 //////////////// MASCARA PARA TELEFONE /////////////
 document.getElementById('telefone').addEventListener('keyup', ()=>{
     let telefone = removerCaracter(document.getElementById('telefone').value);
@@ -207,13 +210,12 @@ function limparCampos(){
 
 //////////// FUÇÃO PARA DAR ZOOM NA IMAGEM //////////////
 let zoom = document.querySelectorAll('.zoom');
-let mobile =  navigator.userAgentData.mobile;
 
 for(let i = 0; i < zoom.length; i++){
     zoom[i].addEventListener('click', ()=>{
         let body = document.querySelector('body');
         let alt = zoom[i].alt;
-        let src = mobile == false ? zoom[i].src.replace('jpeg', 'png').replace('https://www.rafael-vieira.com/images', '') : zoom[i].src.replace('jpeg', 'png').replace('https://rafael-vieira.com/images', '');
+        let src = zoom[i].src.replace('jpeg', 'png').replace('images', 'images/original/');
 
         let section = document.createElement('section')
             section.setAttribute('class', 'zoom-image zoomImage');
@@ -222,7 +224,7 @@ for(let i = 0; i < zoom.length; i++){
             div.setAttribute('class', 'fechar-image');
         
         let img = document.createElement('img');
-            img.setAttribute('src', `./images/original/${src}`)
+            img.setAttribute('src', src)
             img.setAttribute('alt', alt);
 
             section.appendChild(div);
