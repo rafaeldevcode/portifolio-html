@@ -1,15 +1,29 @@
-mensagem("#FF0000", "FORMULÁRIO AINDA NÃO FUNCIONAL")
+$(document).ready(()=>{
+    mensagem("#FF0000", "FORMULÁRIO AINDA NÃO FUNCIONAL")
+    configDetails();
+    menuMobile();
+    mascaraTelefone();
+    carrossel();
+    AOS.init();
 
-////////// INICIAR ANIMAÇÕES SCROLL
-AOS.init();
+    // Mostar botão de voltar ao topo
+    let voltar = $(".btn-topo");
+    $(document).scroll( function() {
+        let scroll = $(document).scrollTop();
+        if(scroll >= 160)  $(voltar).fadeIn();
+        if(scroll < 159 ) $(voltar).fadeOut();
+    });  
+});
 
 //////////////// MASCARA PARA TELEFONE /////////////
-document.getElementById('telefone').addEventListener('keyup', ()=>{
-    let telefone = removerCaracter(document.getElementById('telefone').value);
-    let mascara = `(${telefone.substr(0, 2)}) ${telefone.substr(2, 1)} ${telefone.substr(3, 4)}-${telefone.substr(7, 4)}`;
-
-    document.getElementById('telefone').value = mascara;
-});
+function mascaraTelefone(){
+    $('#telefone').on('input', ()=>{
+        let telefone = removerCaracter($('#telefone').val());
+        let mascara = `(${telefone.substr(0, 2)}) ${telefone.substr(2, 1)} ${telefone.substr(3, 4)}-${telefone.substr(7, 4)}`;
+    
+        $('#telefone').val(mascara);
+    });
+}
 
 function removerCaracter(telefone){
     let regex = /[^0-9]/gi;
@@ -17,31 +31,33 @@ function removerCaracter(telefone){
     return telefone;
 }
 
-function validaEmail(email){
-    let regex = /[a-zA-Z0-9]/
+/////////////// MENU MOBILE /////////////
+function menuMobile(){
+    document.getElementsByClassName("menu-mobile")[0].addEventListener("click", ()=>{
+        document.getElementsByClassName("nav")[0].classList.remove("fecharMenu");
+        document.getElementsByClassName("nav")[0].classList.add("abrirMenu");
+    })
+    
+    document.getElementsByClassName("fechar-menu")[0].addEventListener("click", ()=>{
+        document.getElementsByClassName("nav")[0].classList.add("fecharMenu");
+        document.getElementsByClassName("nav")[0].classList.remove("abrirMenu");
+    });
+    
+    // document.getElementsByClassName("nav")[0].addEventListener("click", ()=>{
+    //     document.getElementsByClassName("nav")[0].classList.remove("abrir-menu");
+    // })
 }
 
-/////////////// MENU MOBILE /////////////
-document.getElementsByClassName("menu-mobile")[0].addEventListener("click", ()=>{
-    document.getElementsByClassName("nav")[0].classList.add("abrir-menu");
-})
-
-document.getElementsByClassName("fechar-menu")[0].addEventListener("click", ()=>{
-    document.getElementsByClassName("nav")[0].classList.remove("abrir-menu");
-})
-
-document.getElementsByClassName("nav")[0].addEventListener("click", ()=>{
-    document.getElementsByClassName("nav")[0].classList.remove("abrir-menu");
-})
-
 /////////////// CARROSSEL ///////////////
-$('.carrossel').slick({
-    dots: true,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    adaptiveHeight: true
-});
+function carrossel(){
+    $('.carrossel').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: true
+    });
+}
 
 ////////////// SCROLL SUAVE NOS LINKS INTERNOS ////////////
 $('.nav a[href^="#"]').on('click', function(e) {
@@ -64,22 +80,12 @@ $('.btn-topo a[href^="#"]').on('click', function(e) {
     }, 500);
 });
 
-//////////////// MOSTRAR ICONE DE VOLTAR AO TOPO ////////////////
-$(document).ready( () => {     
-    var voltar = $(".btn-topo");
-    $(document).scroll( function() {
-      var scroll = $(document).scrollTop();
-      if(scroll >= 160)  $(voltar).fadeIn();
-      if(scroll < 159 ) $(voltar).fadeOut();
-    });       
-});
-
 //////////////// ADICIONAR ANO NO RODAPÉ //////////////
 let data = new Date();
 let ano = data.getFullYear();
-document.getElementById("ano").innerHTML = ano;
+$("#ano").text(ano);
 
-document.getElementById("idade").innerHTML = ano - 1998;
+$("#idade").text(ano - 1998);
 
 /////////////// VALIDAR FORMULÁRIO ///////////////
 function valida(event) {
@@ -167,6 +173,20 @@ function enviarForm(dados, dadosStr){
             
         },
     });
+
+    ////////// FUNÇÃO PARA LIMPAR CAMPOS FORMULÁRIO /////////
+    function limparCampos(){
+        let inputs = $('.input');
+
+        for(let i = 0; i < inputs.length; i++){
+            inputs[i].val('');
+            inputs[i].css('border-color', '#000000');
+        }
+
+        $('#enviar').val('Enviar');
+        $("#mensagem").val('');
+        $("#mensagem").css('border-color', '#000000');
+    }
 }
 
 /////////// FUNÇÃO PARA OCULTAR MENSAGEM DO ENVIO DO FORMULÁRIO ////////////
@@ -192,20 +212,6 @@ function mensagem(color, msg){
             document.querySelector('.info').remove();
         }, 500)
     }, 8000)
-}
-
-////////// FUNÇÃO PARA LIMPAR CAMPOS FORMULÁRIO /////////
-function limparCampos(){
-    let inputs = document.querySelectorAll('input');
-
-    for(let i = 0; i < inputs.length; i++){
-        inputs[i].value = '';
-        inputs[i].style.borderColor = '#000000'
-    }
-
-    document.getElementById('enviar').value = 'Enviar'
-    document.getElementById("mensagem").value = '';
-    document.getElementById("mensagem").style.borderColor = '#000000';
 }
 
 //////////// FUÇÃO PARA DAR ZOOM NA IMAGEM //////////////
@@ -241,7 +247,7 @@ for(let i = 0; i < zoom.length; i++){
         document.querySelector('html').style.overflowY = 'hidden';
 
         fecharImage(body);
-    })
+    });
 }
 
 function fecharImage(body){
@@ -256,6 +262,39 @@ function fecharImage(body){
         setTimeout(()=>{
             document.getElementsByClassName('zoom-image')[0].remove();
         }, 500);
-    })
+    });
+}
 
+function configDetails(){
+    let details = $('#projetos').find('details');
+
+    for (let i = 0; i < details.length; i++) {
+        details[i].addEventListener('click', ()=>{
+            let parent = details[i].parentNode;
+
+            if(inArray(parent.classList, 'z-index') === true){
+                parent.classList.remove('z-index');
+            }else{
+                closeDetail(details);
+                parent.classList.add('z-index');
+            }
+        });
+    }
+
+    function closeDetail(details){
+        for (let i = 0; i < details.length; i++) {
+            details[i].open = false;
+            details[i].parentNode.classList.remove('z-index');
+        }
+    }
+}
+
+function inArray(array, string){
+    for (let i = 0; i < array.length; i++) {
+        if(array[i] === string){
+            return true;
+        }
+    }
+
+    return false;
 }

@@ -45,6 +45,10 @@
     --fonte-titulo: Netron;
 }
 
+.z-index{
+    z-index: 1;
+}
+
 ::-webkit-scrollbar {
     width: 8px;
   }
@@ -978,8 +982,12 @@ input[type=number]::-webkit-inner-spin-button {
     animation: visivel .5s linear;
 }
 
-.abrir-menu{
-    animation: abrir-menu .3s ease-out forwards;
+.abrirMenu{
+    animation: abrirMenu .3s ease-out forwards;
+}
+
+.fecharMenu{
+    animation: fecharMenu .3s ease-out forwards;
 }
 
 .valida{
@@ -1013,9 +1021,25 @@ input[type=number]::-webkit-inner-spin-button {
     }
 }
 
-@keyframes abrir-menu {
-    to{
-        right: 0;
+@keyframes abrirMenu {
+    0%{
+        transform: translateX(300px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fecharMenu {
+    0%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(300px);
+        opacity: 0;
     }
 }
 
@@ -1102,7 +1126,9 @@ input[type=number]::-webkit-inner-spin-button {
         height: 100%;
         padding-left: 30px;
         top: 0;
-        right: -295px;
+        right: 0;
+        transform: translateX(300px);
+        opacity: 0;
         background: #000;
         border: 2px solid var(--cor-principal);
         border-left: 0;
