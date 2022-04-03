@@ -43,9 +43,10 @@ function menuMobile(){
         document.getElementsByClassName("nav")[0].classList.remove("abrirMenu");
     });
     
-    // document.getElementsByClassName("nav")[0].addEventListener("click", ()=>{
-    //     document.getElementsByClassName("nav")[0].classList.remove("abrir-menu");
-    // })
+    document.getElementsByClassName("nav")[0].addEventListener("click", ()=>{
+        document.getElementsByClassName("nav")[0].classList.add("fecharMenu");
+        document.getElementsByClassName("nav")[0].classList.remove("abrir-menu");
+    })
 }
 
 /////////////// CARROSSEL ///////////////
