@@ -1,5 +1,4 @@
 $(document).ready(()=>{
-    mensagem("#FF0000", "FORMULÁRIO AINDA NÃO FUNCIONAL")
     configDetails();
     menuMobile();
     mascaraTelefone();
@@ -142,35 +141,56 @@ function valida(event) {
         }
 
         let dados = [{Nome: nome, Email: email, Telefone: telefone, Mensagem: msg}];
-        let dadosStr = JSON.stringify(dados);
 
-        enviarForm(dados, dadosStr);
+        enviarForm(dados);
         return retorno;
     } catch {
 
-        mensagem("#FF0000", "Este é um erro interno! Tente novamente mais tarde.");
+        mensagem("danger", "Este é um erro interno! Tente novamente mais tarde.");
         console.error(event);
 
     }
 }
 
 ////////////////// ENVIAR FORMULÁRIO ///////////
-function enviarForm(dados, dadosStr){
+function enviarForm(dados){
+    const headers = {
+        'api-key':'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',
+        'Content-Type':'application/json',
+        'Accept':'application/json'
+    };
+
+    const data = {
+        'type':'transactional',
+        'sender' : {
+            "name":dados[0].Nome,
+            "email":dados[0].Email
+        },
+        'to' : [{
+            "name":"Rafael Vieira",
+            "email":"rafaeldevcode@gmail.com"
+        }],
+        'subject':'Email enviado do site de portifolio',
+        'htmlContent':`<html><head></head><body><p>Olá Rafael;</p><p> Este email foi enviado do seu site de portifolio.</p><p>${dados[0].Mensagem}</p>Meu telefone para contato: ${dados[0].Telefone}</body></html>`
+    };
+
     $.ajax({
         type: "POST",
-        url: "./php/index.php",
-        data: { dadosStr: dados },
+        url: "https://api.sendinblue.com/v3/smtp/email",
+        headers: headers,
+        data: JSON.stringify(data),
         success: (response) => {
 
             limparCampos()
-            mensagem("#7EEA0F", "Formulário enviado com sucesso!")
+            mensagem("success", "Formulário enviado com sucesso!")
             console.log(response);
 
         },
-        error: (textStatus, errorThrown) => {
+        error: (error) => {
 
-            mensagem("#FF0000", "Erro ao enviar formulário! Tente novamente.")
-            console.log(textStatus, errorThrown);
+            mensagem("danger", error.responseJSON.message)
+            console.error(error);
+            console.error('Type error: ', error.responseJSON.message);
             
         },
     });
@@ -191,13 +211,12 @@ function enviarForm(dados, dadosStr){
 }
 
 /////////// FUNÇÃO PARA OCULTAR MENSAGEM DO ENVIO DO FORMULÁRIO ////////////
-function mensagem(color, msg){
+function mensagem(typeMessage, msg){
     let body = document.querySelector('body');
 
     let p = document.createElement('p');
         p.setAttribute('id', 'info');
-        p.style.borderColor = color;
-        p.style.color = color;
+        p.setAttribute('class', typeMessage);
         p.innerHTML = msg;
 
     let div = document.createElement('div');

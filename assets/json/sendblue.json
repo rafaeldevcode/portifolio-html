@@ -1,0 +1,8 @@
+
+{    
+    "sendblue":{
+        "url": "https://api.sendinblue.com/v3/smtp/email",
+        "api_key": "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"
+
+    }
+}

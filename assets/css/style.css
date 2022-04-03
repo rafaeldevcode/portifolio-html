@@ -45,10 +45,6 @@
     --fonte-titulo: Netron;
 }
 
-.z-index{
-    z-index: 1;
-}
-
 ::-webkit-scrollbar {
     width: 8px;
   }
@@ -749,7 +745,7 @@ body{
     align-items: center;
     width: 100%;
     max-width: 400px;
-    height: 50px;
+    padding: 10px;
 }
 
 .contato .form form .inputs{
@@ -975,6 +971,21 @@ input[type=number]::-webkit-inner-spin-button {
 .zoom-image img{
     max-height: 100%;
     max-width: 100%;
+}
+
+/* //// CLASSES PARA JAVASCRIPT //// */
+.z-index{
+    z-index: 1;
+}
+
+.success{
+    color: #7EEA0F;
+    border-color: #7EEA0F !important;
+}
+
+.danger{
+    color: #FF0000;
+    border-color: #FF0000 !important;
 }
 
 /* /////////////// KEYFRAMES //////////////// */
