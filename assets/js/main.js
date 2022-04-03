@@ -123,8 +123,6 @@ function valida(event) {
                 document.getElementById("telefone").classList.add("valida");
                 return false;
             }else{
-                telefone = `+55${telefone}`;
-
                 document.getElementById("telefone").classList.remove("valida");
                 document.getElementById("telefone").style.borderColor = "#7EEA0F";
             }
